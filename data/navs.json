@@ -1,0 +1,8 @@
+[
+  { "name": "Home", "path": "/", "icon": "Home" },
+  { "name": "About", "path": "/about", "icon": "User" },
+  { "name": "Achievements", "path": "/achievements", "icon": "Trophy" },
+  { "name": "Projects", "path": "/projects", "icon": "FolderGit2" },
+  { "name": "Dashboard", "path": "/dashboard", "icon": "LayoutDashboard" },
+  { "name": "Contact", "path": "/contact", "icon": "Mail" }
+]

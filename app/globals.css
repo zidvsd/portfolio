@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-light-gray: var(--light-gray);
+  --font-onest: var(--font-onest);
+  --color-dark-gray: var(--dark-gray);
+  --color-accent: var(--accent);
+  --color-blue-accent: var(--blue-accent);
+  --color-off-gray: var(--off-gray);
+  --color-gray: var(--gray);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #262626;
+  --gray: #d4d4d4;
+  --light-gray: #f5f5f5;
+  --dark-gray: #262626;
+  --accent: #16a34a;
+  --blue-accent: #60a5fa;
+  --off-gray: #404040;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+  --gray: #d4d4d4;
+  --light-gray: #f5f5f5;
+  --dark-gray: #262626;
+  --accent: #22c55e;
+  --blue-accent: #60a5fa;
+  --off-gray: #404040;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Custom utility for bg-light-gray */
+.bg-light-gray {
+  background-color: var(--light-gray) !important;
+}
+
+/* Custom utility for bg-dark-gray */
+.bg-dark-gray {
+  background-color: var(--dark-gray) !important;
+}
+
+.custom-container {
+  @apply max-w-[1280px] mx-auto px-4 md:px-6 lg:px-9 xl:px-12;
 }
