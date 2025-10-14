@@ -4,6 +4,8 @@ import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Navbar from "@/components/layout/Navbar";
 import { Providers } from "@/providers/providers";
+import NextTopLoader from "nextjs-toploader";
+import AnimatedPageWrapper from "@/components/layout/AnimatePageWrapper";
 const onest = Onest({
   subsets: ["latin"],
   variable: "--font-onest",
@@ -30,18 +32,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${onest.variable} antialiased  font-onest`}>
+        <NextTopLoader color="#16a34a" />
         <Providers>
           <div className="min-h-screen custom-container ">
             {/* lg screen 20/80 grid */}
             <div className="hidden lg:grid lg:grid-cols-[20%_80%] min-h-screen mt-8">
               <Sidebar />
-              <main className="p-6">{children}</main>
+              <AnimatedPageWrapper>
+                <main className="p-6">{children}</main>
+              </AnimatedPageWrapper>
             </div>
 
             {/* mobile navbar  */}
             <div className="lg:hidden flex flex-col min-h-screen">
               <Navbar />
-              <main className="flex-1 p-4">{children}</main>
+              <AnimatedPageWrapper>
+                <main className="flex-1 p-4">{children}</main>
+              </AnimatedPageWrapper>
             </div>
           </div>
         </Providers>

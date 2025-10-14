@@ -32,7 +32,7 @@ export default function DarkModeToggle() {
       {/* Moon Icon */}
       <div
         className={`flex items-center justify-center p-2 rounded-full transition-all duration-300 ${
-          theme === "dark" ? "bg-off-gray" : "bg-transparent"
+          theme === "dark" ? "bg-neutral-600" : "bg-transparent"
         }`}
       >
         <Moon

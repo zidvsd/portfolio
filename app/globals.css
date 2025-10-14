@@ -10,6 +10,7 @@
   --color-blue-accent: var(--blue-accent);
   --color-off-gray: var(--off-gray);
   --color-gray: var(--gray);
+  --color-custom-gray: var(--custom-gray);
 }
 
 :root {
@@ -21,17 +22,18 @@
   --accent: #16a34a;
   --blue-accent: #60a5fa;
   --off-gray: #404040;
+  --custom-gray: #A3A3A3;
 }
 
 .dark {
   --background: #121212;
   --foreground: #ffffff;
-  --gray: #404040;
+  --gray: #262626;
   --light-gray: #f5f5f5;
   --dark-gray: #262626;
   --accent: #22c55e;
   --blue-accent: #60a5fa;
-  --off-gray: #404040;
+  --off-gray: #E5E5E5;
 }
 
 body {
