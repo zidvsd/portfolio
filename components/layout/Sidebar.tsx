@@ -3,7 +3,7 @@ import DarkModeToggle from "../buttons/DarkModeToggle";
 import Image from "next/image";
 import navs from "@/data/navs.json";
 import * as Icons from "lucide-react";
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,7 +24,7 @@ export default function Sidebar() {
         </div>
 
         {/* User Info */}
-        <div className="flex flex-col gap-y-2 items-center">
+        <div className="flex flex-col gap-y-2  items-center">
           <div className="flex gap-4 items-center">
             <h2 className="text-xl font-semibold">Rashid Visda</h2>
             <BadgeCheck className="text-blue-accent size-6" />
@@ -34,7 +34,7 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="border-t w-full border-neutral-300 flex flex-col items-start justify-center gap-2 py-4">
+        <nav className="border-t w-full border-neutral-300 flex flex-col items-start justify-center gap-2 py-4 mt-2">
           {navs.map((nav) => {
             const LucideIcon = (Icons as any)[nav.icon];
             const isActive = path === nav.path;
@@ -43,22 +43,19 @@ export default function Sidebar() {
               <Link
                 key={nav.path}
                 href={nav.path}
-                className={`w-full rounded-md flex items-center py-2 px-4 gap-2 
-    transition-colors duration-300
-    ${
-      isActive
-        ? "!bg-neutral-400 dark:!bg-dark-gray text-foreground dark:text-white"
-        : "text-foreground "
-    }`}
+                className={`w-full group text-xl rounded-md flex items-center py-2 px-4 gap-2 
+  transition-colors duration-300 hover:bg-gray 
+  ${isActive ? "bg-gray" : "text-foreground  hover:scale-105 hover-utility"}`}
               >
                 {LucideIcon && (
                   <LucideIcon
-                    className={`size-5 ${
-                      isActive ? "text-accent" : "text-foreground"
-                    }`}
+                    className={`size-5  group-hover:rotate-[-20deg] hover-utility`}
                   />
                 )}
                 <span>{nav.name}</span>
+                {isActive ? (
+                  <ArrowRight className="ml-auto size-4 text-off-gray" />
+                ) : null}
               </Link>
             );
           })}
