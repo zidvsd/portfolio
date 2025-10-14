@@ -20,7 +20,7 @@ export default function Sidebar() {
           <Image
             className="object-cover rounded-full"
             fill
-            src="/images/profile-picture.jfif"
+            src="/images/profile-picture.png"
             alt="profile-picture"
           />
         </div>
