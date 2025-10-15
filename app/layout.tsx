@@ -34,9 +34,9 @@ export default function RootLayout({
       <body className={`${onest.variable} antialiased  font-onest`}>
         <NextTopLoader color="#16a34a" />
         <Providers>
-          <div className="min-h-screen custom-container ">
+          <div className="min-h-screen ">
             {/* lg screen 20/80 grid */}
-            <div className="hidden lg:grid lg:grid-cols-[20%_80%] min-h-screen mt-8">
+            <div className="hidden lg:grid lg:grid-cols-[20%_80%] min-h-screen mt-8 custom-container">
               <Sidebar />
               <AnimatedPageWrapper>
                 <main className="p-6">{children}</main>
@@ -47,7 +47,7 @@ export default function RootLayout({
             <div className="lg:hidden flex flex-col min-h-screen">
               <Navbar />
               <AnimatedPageWrapper>
-                <main className="flex-1 p-4">{children}</main>
+                <main className="flex-1 p-4 ">{children}</main>
               </AnimatedPageWrapper>
             </div>
           </div>
