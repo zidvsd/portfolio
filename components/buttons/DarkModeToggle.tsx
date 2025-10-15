@@ -13,7 +13,7 @@ export default function DarkModeToggle() {
         theme === "light"
           ? "bg-light-gray border-neutral-300"
           : "bg-dark-gray border-neutral-600"
-      } border relative w-[92px] h-[42px] rounded-full flex items-center justify-between px-3  
+      } cursor-pointer border relative w-[92px] h-[42px] rounded-full flex items-center justify-between px-3  
       transition-colors duration-300 focus:outline-none`}
     >
       {/* Sun Icon */}

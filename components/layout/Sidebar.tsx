@@ -21,7 +21,7 @@ export default function Sidebar() {
     >
       <div className="flex flex-col gap-y-4 items-center justify-center text-center">
         {/* Profile Picture */}
-        <div className="size-32 relative border border-neutral-200 rounded-full">
+        <div className="size-32 relative border border-neutral-500 rounded-full">
           <Image
             priority
             className="object-cover rounded-full"
@@ -42,7 +42,7 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="border-t w-full border-neutral-300 flex flex-col items-start justify-center gap-2 pt-4 mt-2">
+        <nav className="border-t w-full border-neutral-600 flex flex-col items-start justify-center gap-2 pt-4 mt-2">
           {navs.map((nav) => {
             const iconsMap = Icons as unknown as Record<string, LucideIcon>;
             const LucideIcon = iconsMap[nav.icon as keyof typeof Icons];
