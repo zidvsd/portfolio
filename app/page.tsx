@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className="custom-container  mx-auto ">
       <section className="pb-8">
-        <h1 className="text-2xl font-semibold">Hi, I'm {profile.name}</h1>
+        <h1 className="text-2xl font-semibold">Hi, I&apos;m {profile.name}</h1>
         <ul className="lg:flex text-neutral-600 dark:text-neutral-400 list-disc list-inside mt-2 text-sm gap-4 space-y-2">
           <li>
             Based in {profile.location.city}, {profile.location.country}{" "}
