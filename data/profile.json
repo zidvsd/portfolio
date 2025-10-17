@@ -1,0 +1,39 @@
+{
+  "name": "Rashid Visda",
+  "greeting": "Hi, I'm Rashid Visda",
+  "location": {
+    "city": "Laguna",
+    "country": "Philippines",
+    "flag": "🇵🇭",
+    "workPreference": "Work from Home"
+  },
+  "bio": "Frontend and Backend Developer passionate about creating modern, responsive, and efficient web applications. I specialize in building clean and maintainable codebases using Nextjs, React, TypeScript, JavaScript, Tailwind CSS, and HTML/CSS. I also work with Node.js, Express, PostgreSQL, MongoDB, and Supabase to create powerful full-stack solutions. I’m detail-oriented and focused on delivering seamless user experiences and reliable performance.",
+  "skillsSection": {
+    "title": "Skills",
+    "subtitle": "My professional skills."
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Vite",
+        "Framer Motion"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express", "PostgreSQL", "MongoDB", "Supabase"]
+    },
+    {
+      "category": "Tools & Others",
+      "items": ["npm", "Git", "GitHub"]
+    }
+  ]
+}
