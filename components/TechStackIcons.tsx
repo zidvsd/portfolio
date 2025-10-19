@@ -36,7 +36,9 @@ export default function TechStackIcons() {
       <h2 className="text-xl font-semibold flex items-center gap-2">
         <span className="text-green-500">&lt;/&gt;</span> Skills
       </h2>
-      <p className="text-muted-foreground mt-1 mb-6">My professional skills.</p>
+      <p className="text-neutral-600 dark:text-neutral-400 mt-1 mb-6">
+        My professional skills.
+      </p>
 
       <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-4">
         {icons.map((icon, index) => (

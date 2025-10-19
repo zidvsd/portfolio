@@ -4,10 +4,11 @@ import Sidebar from "@/components/layout/Sidebar";
 import { motion } from "motion/react";
 import profile from "@/data/profile.json";
 import TechStackIcons from "@/components/TechStackIcons";
+import Featured from "@/components/Featured";
 export default function page() {
   return (
     <div className="custom-container  mx-auto ">
-      <section className="pb-8">
+      <section id="home-section" className="pb-8">
         <h1 className="text-2xl font-semibold">Hi, I&apos;m {profile.name}</h1>
         <ul className="lg:flex text-neutral-600 dark:text-neutral-400 list-disc list-inside mt-2 text-sm gap-4 space-y-2">
           <li>
@@ -21,8 +22,16 @@ export default function page() {
       </section>
 
       {/* skills */}
-      <section className="pt-8 border-t border-neutral-600">
+      <section id="skills-section" className="pt-8 border-t border-neutral-600">
         <TechStackIcons />
+      </section>
+      {/* bento grid  */}
+
+      <section
+        id="featured-section"
+        className="pt-8 border-t border-neutral-600 mt-12"
+      >
+        <Featured />
       </section>
     </div>
   );
