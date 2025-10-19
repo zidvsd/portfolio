@@ -10,7 +10,7 @@ import * as Icons from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import navs from "@/data/navs.json";
 import { usePathname } from "next/navigation";
-import { easeOut } from "motion";
+import { easeOut, easeIn } from "motion";
 
 export default function Navbar() {
   const [isToggle, setIsToggle] = useState(false);
@@ -32,7 +32,7 @@ export default function Navbar() {
     exit: {
       opacity: 0,
       y: -20,
-      transition: { duration: 0.25, ease: "easeIn" },
+      transition: { duration: 0.25, ease: easeIn },
     },
   };
 
@@ -114,7 +114,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: easeOut }}
               className="custom-container mt-4 px-4 md:px-8"
             >
               <div className="border-t border-neutral-700"></div>
