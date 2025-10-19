@@ -31,7 +31,7 @@ export default function TechStackIcons() {
       className="rounded-2xl p-8 shadow-xl backdrop-blur-sm
         border border-gray-300/30 dark:border-gray-800/30
         bg-gradient-to-br from-white/60 to-gray-100/40 
-        dark:from-[#0c0c0c]/60 dark:to-[#1a1a1a]/40"
+        dark:from-[#0c0c0c]/60 dark:to-[#1a1a1a]/40 "
     >
       <h2 className="text-xl font-semibold flex items-center gap-2">
         <span className="text-green-500">&lt;/&gt;</span> Skills
@@ -43,7 +43,7 @@ export default function TechStackIcons() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.15, rotate: 5 }}
-            className="transition-all duration-200 hover:drop-shadow-[0_0_8px_rgba(0,255,100,0.3)] cursor-pointer"
+            className="transition-all  duration-200 hover:drop-shadow-[0_0_8px_rgba(0,255,100,0.3)] cursor-pointer"
           >
             <Image
               src={icon.src}
