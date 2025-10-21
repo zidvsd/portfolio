@@ -21,7 +21,7 @@ export default function Featured() {
       </div>
 
       <p className="dark:text-custom-gray">
-        Explore everything I've crafted, contributed, and accomplished.
+        Explore everything I&apos;ve crafted, contributed, and accomplished.
       </p>
 
       <section className="w-full dark:bg-neutral-900 text-white">
