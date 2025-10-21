@@ -59,3 +59,54 @@ body {
 .navbar-active {
   @apply bg-gray text-foreground hover:bg-light-gray hover:text-white;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 40s linear infinite;
+  will-change: transform;
+}
+
+/* Core layout */
+.ticker-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  display: inline-block;
+  margin-right: 4rem;
+  /* spacing between items */
+  font-weight: 600;
+  font-size: 0.875rem;
+  /* text-sm */
+}

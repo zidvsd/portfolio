@@ -42,7 +42,7 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="border-t w-full border-neutral-600 flex flex-col items-start justify-center gap-2 pt-4 mt-2">
+        <nav className="border-t w-full border-neutral-300 dark:border-neutral-600 flex flex-col items-start justify-center gap-2 pt-4 mt-2">
           {navs.map((nav) => {
             const iconsMap = Icons as unknown as Record<string, LucideIcon>;
             const LucideIcon = iconsMap[nav.icon as keyof typeof Icons];
@@ -71,7 +71,7 @@ ${
             );
           })}
         </nav>
-        <div className="text-sm dark:text-neutral-400 border-t w-full border-neutral-300  text-center space-y-2 py-4 ">
+        <div className="text-sm dark:text-neutral-400 border-t w-full border-neutral-300 dark:border-neutral-600  text-center space-y-2 py-4 ">
           <p>Copyright &copy; 2025</p>
           <p>Rashid Visda. All rights reserved.</p>
         </div>

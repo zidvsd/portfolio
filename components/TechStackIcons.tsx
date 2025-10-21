@@ -2,27 +2,8 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-
+import icons from "@/data/icons.json";
 export default function TechStackIcons() {
-  const icons = [
-    { src: "/icons/html.svg", alt: "HTML" },
-    { src: "/icons/css.svg", alt: "CSS" },
-    { src: "/icons/js.svg", alt: "JavaScript" },
-    { src: "/icons/react.svg", alt: "React" },
-    { src: "/icons/nextjs.svg", alt: "Next.js" },
-    { src: "/icons/node.svg", alt: "Node.js" },
-    { src: "/icons/express.svg", alt: "Express" },
-    { src: "/icons/mongodb.svg", alt: "MongoDB" },
-    { src: "/icons/postgresql.svg", alt: "PostgreSQL" },
-    { src: "/icons/supabase.svg", alt: "Supabase" },
-    { src: "/icons/vite.svg", alt: "Vite" },
-    { src: "/icons/tailwind.svg", alt: "TailwindCSS" },
-    { src: "/icons/motion.png", alt: "Framer Motion" },
-    { src: "/icons/figma.svg", alt: "Figma" },
-    { src: "/icons/git.svg", alt: "Git" },
-    { src: "/icons/npm.svg", alt: "npm" },
-  ];
-
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}

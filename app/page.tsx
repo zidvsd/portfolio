@@ -22,14 +22,17 @@ export default function page() {
       </section>
 
       {/* skills */}
-      <section id="skills-section" className="pt-8 border-t border-neutral-600">
+      <section
+        id="skills-section"
+        className="pt-8 border-t border-neutral-300 dark:border-neutral-600"
+      >
         <TechStackIcons />
       </section>
       {/* bento grid  */}
 
       <section
         id="featured-section"
-        className="pt-8 border-t border-neutral-600 mt-12"
+        className="pt-8 border-t border-neutral-300 dark:border-neutral-600 mt-12"
       >
         <Featured />
       </section>

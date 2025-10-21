@@ -39,7 +39,7 @@ export default function RootLayout({
             <div className="hidden lg:grid lg:grid-cols-[20%_80%] min-h-screen mt-8 custom-container">
               <Sidebar />
               <AnimatedPageWrapper>
-                <main className="p-6">{children}</main>
+                <main className="p-2">{children}</main>
               </AnimatedPageWrapper>
             </div>
 
