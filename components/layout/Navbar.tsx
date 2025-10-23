@@ -39,8 +39,10 @@ export default function Navbar() {
   return (
     <div
       className={`sticky top-0 z-50 ${
-        isToggle ? "border-none" : "border-b dark:border-neutral-400"
-      } border-neutral-700 bg-background/80 backdrop-blur-lg py-3`}
+        isToggle
+          ? "border-none"
+          : "border-b border-neutral-300 dark:border-neutral-700"
+      } bg-background/80 backdrop-blur-lg py-3`}
     >
       <div className="custom-container flex items-center justify-between pt-4">
         {/* Left Section */}

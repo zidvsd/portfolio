@@ -1,68 +1,94 @@
 "use client";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
-export default function ImageSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export default function PhotoCardSlider() {
+  // --- Autoplay plugin ---
+  function AutoplayPlugin(slider: any) {
+    let timeout: ReturnType<typeof setTimeout>;
+    let mouseOver = false;
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    vertical: false,
-    slides: {
-      perView: 1,
-      spacing: 10,
-    },
-    loop: false, // keep false so we can manually control looping
-    mode: "snap",
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
-  });
-
-  const handleClick = () => {
-    if (instanceRef.current) {
-      const slider = instanceRef.current;
-      const totalSlides = slider.track.details.slides.length;
-      const nextIndex = slider.track.details.rel + 1;
-
-      if (nextIndex >= totalSlides) {
-        // Go back to the first slide
-        slider.moveToIdx(0);
-      } else {
-        // Go to next slide
-        slider.next();
-      }
+    function clearNextTimeout() {
+      clearTimeout(timeout);
     }
-  };
+
+    function nextTimeout() {
+      clearTimeout(timeout);
+      if (mouseOver) return;
+      timeout = setTimeout(() => slider.next(), 3500);
+    }
+
+    slider.on("created", () => {
+      slider.container.addEventListener("mouseover", () => {
+        mouseOver = true;
+        clearNextTimeout();
+      });
+      slider.container.addEventListener("mouseout", () => {
+        mouseOver = false;
+        nextTimeout();
+      });
+      nextTimeout();
+    });
+
+    slider.on("dragStarted", clearNextTimeout);
+    slider.on("animationEnded", nextTimeout);
+    slider.on("updated", nextTimeout);
+  }
+
+  // --- Image data ---
+  const slides = [
+    { src: "/images/zid.jpg" },
+    { src: "/images/zid (2).jpg" },
+    { src: "/images/zid(3).webp" },
+    { src: "/images/profile-picture.png" },
+  ];
+
+  // --- Keen Slider setup ---
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+      slides: { perView: 1, spacing: 15 },
+      mode: "snap",
+      renderMode: "performance",
+    },
+    [AutoplayPlugin]
+  );
+
+  // --- Small random tilt values for realism ---
+  const tiltAngles = [
+    "rotate-[1deg]",
+    "rotate-[-1deg]",
+    "rotate-[2deg]",
+    "rotate-[-2deg]",
+  ];
 
   return (
-    <div
-      ref={sliderRef}
-      className="keen-slider overflow-hidden w-full h-[180px]"
-    >
-      <div
-        onClick={handleClick}
-        className="keen-slider__slide bg-amber-300 flex items-center justify-center text-xl font-semibold cursor-pointer"
-      >
-        Slide 1
-      </div>
-      <div
-        onClick={handleClick}
-        className="keen-slider__slide bg-rose-300 flex items-center justify-center text-xl font-semibold cursor-pointer"
-      >
-        Slide 2
-      </div>
-      <div
-        onClick={handleClick}
-        className="keen-slider__slide bg-lime-300 flex items-center justify-center text-xl font-semibold cursor-pointer"
-      >
-        Slide 3
-      </div>
-      <div
-        onClick={handleClick}
-        className="keen-slider__slide bg-cyan-300 flex items-center justify-center text-xl font-semibold cursor-pointer"
-      >
-        Slide 4
+    <div className="flex justify-center w-full">
+      <div ref={sliderRef} className="keen-slider max-w-[380px] w-full">
+        {slides.map((slide, i) => (
+          <div key={i} className="keen-slider__slide flex justify-center">
+            <div
+              className={`
+                cursor-pointer
+                relative aspect-[3/4] w-full rounded-2xl overflow-hidden
+                shadow-xl border border-neutral-800 bg-neutral-900
+                transition-transform duration-500
+                hover:scale-[1.05] hover:-translate-y-2 hover:rotate-0
+                ${tiltAngles[i % tiltAngles.length]} mt-4
+              `}
+            >
+              <Image
+                src={slide.src}
+                alt={`photo-${i}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 380px"
+                priority={i === 0}
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

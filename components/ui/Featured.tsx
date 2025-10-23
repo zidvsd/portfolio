@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import {
   LayoutPanelLeft,
   FolderGit2,
@@ -12,6 +13,7 @@ import VerticalSlider from "../ui/VerticalSlider";
 import NewsTicker from "../ui/NewsTicker";
 import FadeUpOnView from "../FadeUpOnView";
 import AchievementsSlider from "./AchievementsSlider";
+import { handleScrollToSection } from "@/lib/utils";
 
 export default function Featured() {
   return (
@@ -44,9 +46,12 @@ export default function Featured() {
             <FadeUpOnView className="w-full flex justify-between gap-4">
               <div className="w-1/2 space-y-2 flex flex-col items-start">
                 <div className="flex items-start flex-col gap-2">
-                  <div className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700">
+                  <Link
+                    href={"/projects"}
+                    className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
+                  >
                     <FolderGit2 />
-                  </div>
+                  </Link>
                   <h2 className="text-lg font-semibold">Projects Showcase</h2>
                 </div>
                 <p className="text-neutral-400 text-sm">
@@ -62,9 +67,12 @@ export default function Featured() {
           <div className="dark:bg-neutral-800 text-center text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl p-4">
             <FadeUpOnView>
               <div className="flex items-center flex-col gap-2">
-                <div className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700">
+                <Link
+                  href={"/about"}
+                  className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
+                >
                   <User2 />
-                </div>
+                </Link>
                 <h2 className="text-lg font-semibold">About Me</h2>
               </div>
               <p className="text-neutral-400 text-sm">
@@ -77,9 +85,12 @@ export default function Featured() {
           <div className="dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl">
             <FadeUpOnView className="p-4">
               <div className="flex text-center items-center flex-col gap-2">
-                <div className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700">
+                <button
+                  onClick={() => handleScrollToSection("skills-section")}
+                  className="cursor-pointer rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
+                >
                   <Cpu />
-                </div>
+                </button>
                 <h2 className="text-lg font-semibold">Skills & Tools</h2>
                 <p className="text-neutral-400 text-sm">
                   Covering web, mobile, and UI/UX technologies.
@@ -92,9 +103,12 @@ export default function Featured() {
           <div className="dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl p-4 xl:col-span-2">
             <FadeUpOnView>
               <div className="flex items-center flex-col gap-2">
-                <div className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700">
+                <Link
+                  href={"/achievements"}
+                  className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
+                >
                   <Trophy />
-                </div>
+                </Link>
                 <h2 className="text-lg font-semibold">Achievements</h2>
               </div>
               <p className="text-neutral-400 text-sm">
@@ -118,9 +132,12 @@ export default function Featured() {
             <FadeUpOnView>
               <div className="grid grid-cols-2 items-center  gap-2">
                 <div className="space-y-2">
-                  <div className="rounded-md p-4 w-fit bg-neutral-200 dark:bg-neutral-700">
+                  <Link
+                    href={"contact"}
+                    className="rounded-md p-4 w-fit bg-neutral-200 dark:bg-neutral-700"
+                  >
                     <Briefcase />
-                  </div>
+                  </Link>
                   <h2 className="text-lg font-semibold">Services</h2>
                   <p className="text-neutral-400 text-sm">
                     End-to-end solutions in web, mobile, AI, and design.
