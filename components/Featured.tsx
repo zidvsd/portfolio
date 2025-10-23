@@ -11,6 +11,7 @@ import ImageSlider from "./ImageSlider";
 import VerticalSlider from "./VerticalSlider";
 import NewsTicker from "./NewsTicker";
 import FadeUpOnView from "./FadeUpOnView";
+import AchievementsSlider from "./AchievementsSlider";
 
 export default function Featured() {
   return (
@@ -24,12 +25,12 @@ export default function Featured() {
         Explore everything I&apos;ve crafted, contributed, and accomplished.
       </p>
 
-      <section className="w-full dark:bg-neutral-900 text-white">
+      <section className="w-full  text-white">
         <div
           className="
             grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
             auto-rows-[minmax(180px,auto)]
-            gap-4 xl:gap-2
+            gap-4 xl:gap-2 
           "
         >
           {/* ITEM 1 */}
@@ -57,7 +58,6 @@ export default function Featured() {
               </div>
             </FadeUpOnView>
           </div>
-
           {/* ITEM 2 */}
           <div className="dark:bg-neutral-800 text-center text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl p-4">
             <FadeUpOnView>
@@ -73,7 +73,6 @@ export default function Featured() {
               <ImageSlider />
             </FadeUpOnView>
           </div>
-
           {/* ITEM 3 */}
           <div className="dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl">
             <FadeUpOnView className="p-4">
@@ -89,7 +88,6 @@ export default function Featured() {
               <NewsTicker />
             </FadeUpOnView>
           </div>
-
           {/* ITEM 4 */}
           <div className="dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl p-4 xl:col-span-2">
             <FadeUpOnView>
@@ -102,26 +100,33 @@ export default function Featured() {
               <p className="text-neutral-400 text-sm">
                 Milestones from programs, projects, and communities.
               </p>
+              <AchievementsSlider />
             </FadeUpOnView>
           </div>
 
           {/* ITEM 5 */}
           <div
             className="
-              dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
-              rounded-2xl p-4 xl:col-span-2
-            "
+   dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
+    rounded-2xl p-4 
+    md:col-span-2 md:justify-self-center md:w-4/5
+    lg:col-span-2 lg:justify-self-center lg:w-3/4
+    xl:col-span-2 xl:w-full
+  
+  "
           >
             <FadeUpOnView>
-              <div className="flex items-center flex-col gap-2">
-                <div className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700">
-                  <Briefcase />
+              <div className="grid grid-cols-2 items-center  gap-2">
+                <div className="space-y-2">
+                  <div className="rounded-md p-4 w-fit bg-neutral-200 dark:bg-neutral-700">
+                    <Briefcase />
+                  </div>
+                  <h2 className="text-lg font-semibold">Services</h2>
+                  <p className="text-neutral-400 text-sm">
+                    End-to-end solutions in web, mobile, AI, and design.
+                  </p>
                 </div>
-                <h2 className="text-lg font-semibold">Services</h2>
               </div>
-              <p className="text-neutral-400 text-sm">
-                End-to-end solutions in web, mobile, AI, and design.
-              </p>
             </FadeUpOnView>
           </div>
         </div>
