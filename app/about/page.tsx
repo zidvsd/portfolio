@@ -47,7 +47,14 @@ export default function Page() {
           {aboutData.career.experiences.map((exp, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-6 border border-neutral-300 rounded-lg dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900"
+              className="
+    relative flex items-start gap-4 p-6 border border-neutral-300 rounded-lg 
+    dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 
+    transition-all duration-300
+    dark:hover:border-neutral-600
+    dark:hover:shadow-[0_0_25px_4px_rgba(255,255,255,0.08)]
+    dark:hover:z-10
+  "
             >
               <div className="relative size-12 rounded-full overflow-hidden">
                 <Image

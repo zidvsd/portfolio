@@ -141,6 +141,7 @@ export default function Navbar() {
                     className="w-full"
                   >
                     <Link
+                      onClick={() => setIsToggle(false)}
                       href={nav.path}
                       className={`w-full group text-lg rounded-md flex items-center py-2 px-4 gap-3 
 transition-all duration-300 hover:bg-gray 
