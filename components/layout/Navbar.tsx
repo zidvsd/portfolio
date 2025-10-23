@@ -73,13 +73,15 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="flex flex-col leading-tight"
           >
-            <span className="font-semibold text-xl md:text-2xl text-foreground tracking-wider">
-              Rashid
-            </span>
-            <span className="text-neutral-500 text-md md:text-lg flex items-center gap-1">
-              Visda
-              <BadgeCheck className="text-accent size-4" />
-            </span>
+            <Link href={"/"}>
+              <span className="font-semibold text-2xl md:text-3xl text-foreground tracking-wider">
+                Rashid
+              </span>
+              <span className="text-neutral-500 text-md md:text-xl flex items-center gap-1">
+                Visda
+                <BadgeCheck className="text-accent size-4" />
+              </span>
+            </Link>
           </motion.div>
         </div>
         {/* Right Section */}

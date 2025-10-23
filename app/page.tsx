@@ -3,8 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Sidebar from "@/components/layout/Sidebar";
 import { motion } from "motion/react";
 import profile from "@/data/profile.json";
-import TechStackIcons from "@/components/TechStackIcons";
-import Featured from "@/components/Featured";
+import TechStackIcons from "@/components/ui/TechStackIcons";
+import Featured from "@/components/ui/Featured";
 export default function page() {
   return (
     <div className="custom-container  mx-auto ">

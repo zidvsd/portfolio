@@ -7,10 +7,10 @@ import {
   Trophy,
   Briefcase,
 } from "lucide-react";
-import ImageSlider from "./ImageSlider";
-import VerticalSlider from "./VerticalSlider";
-import NewsTicker from "./NewsTicker";
-import FadeUpOnView from "./FadeUpOnView";
+import ImageSlider from "../ui/ImageSlider";
+import VerticalSlider from "../ui/VerticalSlider";
+import NewsTicker from "../ui/NewsTicker";
+import FadeUpOnView from "../FadeUpOnView";
 import AchievementsSlider from "./AchievementsSlider";
 
 export default function Featured() {

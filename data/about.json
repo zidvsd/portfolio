@@ -28,7 +28,6 @@
     ]
   },
   "education": {
-    "title": "My educational journey.",
     "records": [
       {
         "school": "City College of Calamba",
@@ -36,7 +35,8 @@
         "field": "Computer Science",
         "start_year": 2024,
         "end_year": "Present",
-        "location": "Calamba, Philippines 🇵🇭"
+        "logo": "/icons/ccc-icon.png",
+        "location": "Calamba, Philippines"
       },
       {
         "school": "Holy Angel University",
@@ -44,12 +44,9 @@
         "field": "Computer Science",
         "start_year": 2023,
         "end_year": 2024,
-        "location": "Angeles, Philippines 🇵🇭"
+        "logo": "/icons/hau-icon.png",
+        "location": "Angeles, Philippines"
       }
     ]
-  },
-  "downloads": {
-    "portfolio": "Download Portfolio",
-    "resume": "Download Resume"
   }
 }
