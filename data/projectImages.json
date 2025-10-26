@@ -1,0 +1,26 @@
+[
+  {
+    "name": "portfolio",
+    "image": "/images/projects/portfolio.png"
+  },
+  {
+    "name": "kita-jobs-app",
+    "image": "/images/projects/kita-jobs-app.png"
+  },
+  {
+    "name": "clothora",
+    "image": "/images/projects/clothora.png"
+  },
+  {
+    "name": "brew-haven",
+    "image": "/images/projects/recipe-app.png"
+  },
+  {
+    "name": "le-dream",
+    "image": "/images/projects/le-dream.png"
+  },
+  {
+    "name": "recipe-app",
+    "image": "/images/projects/brew-haven.png"
+  }
+]
