@@ -5,7 +5,6 @@ import navs from "@/data/navs.json";
 import * as Icons from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { BadgeCheck, ArrowRight } from "lucide-react";
-import type { Icon as LucideIconType } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
