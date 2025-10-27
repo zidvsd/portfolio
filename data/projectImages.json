@@ -13,7 +13,7 @@
   },
   {
     "name": "brew-haven",
-    "image": "/images/projects/recipe-app.png"
+    "image": "/images/projects/brew-haven.png"
   },
   {
     "name": "le-dream",
@@ -21,6 +21,6 @@
   },
   {
     "name": "recipe-app",
-    "image": "/images/projects/brew-haven.png"
+    "image": "/images/projects/recipe-app.png"
   }
 ]

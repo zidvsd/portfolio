@@ -4,6 +4,7 @@ interface ThemeContextType {
   theme: "light" | "dark";
   toggleTheme: () => void;
 }
+import { RepoProvider } from "@/context/RepoContext";
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 interface ThemeProviderProps {
@@ -38,9 +39,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <RepoProvider>
+      {" "}
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        {children}
+      </ThemeContext.Provider>
+    </RepoProvider>
   );
 };
 export const useTheme = (): ThemeContextType => {

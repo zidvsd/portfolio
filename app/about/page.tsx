@@ -5,7 +5,7 @@ import Education from "@/components/section/about/Education";
 import WorkExperience from "@/components/section/about/WorkExperience";
 export default function Page() {
   return (
-    <section className="custom-container space-y-2 pt-4 lg:pt-8">
+    <section className="custom-container space-y-2  ">
       {/* About Section */}
       <h1 className="text-2xl font-semibold">About</h1>
       <h3 className="text-neutral-500">A brief introduction to who I am.</h3>
