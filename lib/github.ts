@@ -2,7 +2,11 @@
 import projectImages from "@/data/projectImages.json";
 import { Repo } from "@/types/repo";
 
-export async function getRepoData(repoNames: string[]): Promise<Repo[]> {
+export interface RepoData extends Repo {
+  image: string;
+}
+
+export async function getRepoData(repoNames: string[]): Promise<RepoData[]> {
   const username = "zidvsd";
   const token = process.env.GITHUB_API_KEY;
 
