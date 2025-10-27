@@ -39,7 +39,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
-    <RepoProvider>
+    <RepoProvider initialRepos={[]}>
       {" "}
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         {children}
