@@ -1,7 +1,7 @@
 "use client";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function AchievementsSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
