@@ -1,7 +1,8 @@
 [
   {
     "name": "portfolio",
-    "image": "/images/projects/portfolio.png"
+    "image": "/images/projects/portfolio.png",
+    "live-demo": "https://portfolio-five-sand-23.vercel.app/"
   },
   {
     "name": "kita-jobs-app",
@@ -9,18 +10,22 @@
   },
   {
     "name": "clothora",
-    "image": "/images/projects/clothora.png"
+    "image": "/images/projects/clothora.png",
+    "live-demo": "https://clothora-amber.vercel.app/"
   },
   {
     "name": "brew-haven",
-    "image": "/images/projects/brew-haven.png"
+    "image": "/images/projects/brew-haven.png",
+    "live-demo": "https://coffee-app-ruddy.vercel.app/"
   },
   {
     "name": "le-dream",
-    "image": "/images/projects/le-dream.png"
+    "image": "/images/projects/le-dream.png",
+    "live-demo": "https://le-dream.vercel.app/"
   },
   {
     "name": "recipe-app",
-    "image": "/images/projects/recipe-app.png"
+    "image": "/images/projects/recipe-app.png",
+    "live-demo": "https://recipe-app-azure-gamma.vercel.app/"
   }
 ]

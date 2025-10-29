@@ -118,31 +118,32 @@ export default function Featured() {
             </FadeUpOnView>
           </div>
 
-          {/* ITEM 5 */}
+          {/* ✅ ITEM 5 - Services (Fixed) */}
           <div
             className="
-   dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
-    rounded-2xl p-4 
-    md:col-span-2 md:justify-self-center md:w-4/5
-    lg:col-span-2 lg:justify-self-center lg:w-3/4
-    xl:col-span-2 xl:w-full
-  
-  "
+              dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
+              rounded-2xl p-4 flex justify-between items-center
+              md:col-span-2 lg:col-span-2 xl:col-span-2
+            "
           >
-            <FadeUpOnView>
-              <div className="grid grid-cols-2 items-center  gap-2">
-                <div className="space-y-2">
+            <FadeUpOnView className="w-full flex justify-between gap-4">
+              <div className="w-1/2 space-y-2 flex flex-col items-start">
+                <div className="flex items-start flex-col gap-2">
                   <Link
-                    href={"contact"}
-                    className="rounded-md p-4 w-fit bg-neutral-200 dark:bg-neutral-700"
+                    href="/contact"
+                    className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
                   >
                     <Briefcase />
                   </Link>
                   <h2 className="text-lg font-semibold">Services</h2>
-                  <p className="text-neutral-400 text-sm">
-                    End-to-end solutions in web, mobile, AI, and design.
-                  </p>
                 </div>
+                <p className="text-neutral-400 text-sm">
+                  End-to-end solutions in web, mobile, AI, and design.
+                </p>
+              </div>
+              {/* Optional: add subtle motion or image preview here later */}
+              <div className="hidden md:block w-1/2">
+                <VerticalSlider />
               </div>
             </FadeUpOnView>
           </div>

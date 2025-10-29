@@ -11,7 +11,7 @@ interface ProjectsGridProps {
 
 export default function ProjectsGrid({ initialRepos }: ProjectsGridProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 custom-container pt-4 lg:pt-0">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-6 lg:pt-0 border-neutral-300 border-t dark:border-neutral-700 mt-6">
       {initialRepos.map((repo) => (
         <Link
           key={repo.name}
