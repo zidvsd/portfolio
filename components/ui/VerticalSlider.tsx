@@ -1,6 +1,8 @@
 "use client";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import { getRepoData } from "@/lib/github";
+import { repoNames } from "@/app/projects/page";
 export default function VerticalSlider() {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     vertical: true,

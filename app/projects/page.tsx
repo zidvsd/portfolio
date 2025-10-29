@@ -2,16 +2,16 @@
 import { getRepoData } from "@/lib/github";
 import ProjectsGrid from "@/components/section/projects/ProjectsGrid";
 
-export default async function Page() {
-  const repoNames = [
-    "portfolio",
-    "kita-jobs-app",
-    "clothora",
-    "recipe-app",
-    "brew-haven",
-    "le-dream",
-  ];
+export const repoNames = [
+  "portfolio",
+  "kita-jobs-app",
+  "clothora",
+  "recipe-app",
+  "brew-haven",
+  "le-dream",
+];
 
+export default async function Page() {
   // ✅ Runs on the server, env vars are accessible here
   const repos = await getRepoData(repoNames);
 
