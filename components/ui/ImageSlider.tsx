@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 
-export default function PhotoCardSlider() {
+export default function ImageSlider() {
   // --- Autoplay plugin ---
   function AutoplayPlugin(slider: KeenSliderInstance) {
     let timeout: ReturnType<typeof setTimeout>;

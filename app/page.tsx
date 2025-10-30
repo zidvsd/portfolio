@@ -1,8 +1,10 @@
-"use client";
 import profile from "@/data/profile.json";
 import TechStackIcons from "@/components/ui/TechStackIcons";
 import Featured from "@/components/ui/Featured";
-export default function page() {
+import { getRepoData } from "@/lib/github";
+import { repoNames } from "./projects/page";
+export default async function page() {
+  const repos = await getRepoData(repoNames);
   return (
     <div className="custom-container  mx-auto ">
       <section id="home-section" className="pb-8">
@@ -31,7 +33,7 @@ export default function page() {
         id="featured-section"
         className="pt-8 border-t border-neutral-300 dark:border-neutral-600 mt-12"
       >
-        <Featured />
+        <Featured repos={repos} />
       </section>
     </div>
   );

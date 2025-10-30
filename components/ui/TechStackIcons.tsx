@@ -26,7 +26,7 @@ export default function TechStackIcons() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.15, rotate: 5 }}
-            className="transition-all  duration-200 hover:drop-shadow-[0_0_8px_rgba(0,255,100,0.3)] cursor-pointer"
+            className="transition-all  duration-200 cursor-pointer"
           >
             <Image
               src={icon.src}

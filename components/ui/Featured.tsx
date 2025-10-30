@@ -14,8 +14,9 @@ import NewsTicker from "../ui/NewsTicker";
 import FadeUpOnView from "../FadeUpOnView";
 import AchievementsSlider from "./AchievementsSlider";
 import { handleScrollToSection } from "@/lib/utils";
+import { Repo } from "@/types/repo";
 
-export default function Featured() {
+export default function Featured({ repos }: { repos: Repo[] }) {
   return (
     <div className="space-y-2">
       <div className="flex gap-2 items-start text-left">
@@ -38,10 +39,11 @@ export default function Featured() {
           {/* ITEM 1 */}
           <div
             className="
-              dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
-              rounded-2xl p-4 flex justify-between
-              xl:col-span-2 gap-4
-            "
+    dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
+    rounded-2xl p-4 flex justify-between
+    xl:col-span-2 gap-4
++   h-[400px]
+  "
           >
             <FadeUpOnView className="w-full flex justify-between gap-4">
               <div className="w-1/2 space-y-2 flex flex-col items-start">
@@ -59,7 +61,7 @@ export default function Featured() {
                 </p>
               </div>
               <div className="w-1/2">
-                <VerticalSlider />
+                <VerticalSlider repos={repos} />
               </div>
             </FadeUpOnView>
           </div>
@@ -140,10 +142,6 @@ export default function Featured() {
                 <p className="text-neutral-400 text-sm">
                   End-to-end solutions in web, mobile, AI, and design.
                 </p>
-              </div>
-              {/* Optional: add subtle motion or image preview here later */}
-              <div className="hidden md:block w-1/2">
-                <VerticalSlider />
               </div>
             </FadeUpOnView>
           </div>

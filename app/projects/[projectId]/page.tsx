@@ -22,7 +22,6 @@ export default async function Page({ params }: ProjectProps) {
   // convert to html
   const htmlContent = readme ? marked.parse(readme) : "<p>No README found.</p>";
   let techStackIcons = extractTechIcons(readme || "");
-  console.log(readme);
   techStackIcons = Array.from(
     new Map(techStackIcons.map((icon) => [icon.alt, icon])).values()
   );
