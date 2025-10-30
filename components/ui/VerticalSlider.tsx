@@ -13,12 +13,6 @@ interface RepoImageData {
 }
 
 export default function VerticalSlider({ repos }: { repos?: Repo[] }) {
-  if (!repos || repos.length === 0) {
-    return (
-      <div className="text-center text-neutral-400">Loading projects...</div>
-    );
-  }
-
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     vertical: true,
     slides: {
@@ -28,6 +22,12 @@ export default function VerticalSlider({ repos }: { repos?: Repo[] }) {
     loop: true,
     mode: "snap",
   });
+
+  if (!repos || repos.length === 0) {
+    return (
+      <div className="text-center text-neutral-400">Loading projects...</div>
+    );
+  }
 
   const mergedRepos = repos.map((repo) => {
     const imageData = (repoImages as RepoImageData[]).find(

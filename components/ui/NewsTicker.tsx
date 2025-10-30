@@ -10,7 +10,7 @@ export default function NewsTicker() {
   ];
 
   return (
-    <div className="bg-light-gray py-2 overflow-hidden">
+    <div className="bg-light-gray py-2 overflow-hidden space-y-4">
       {/* RIGHT → LEFT */}
       <div className="ticker-container">
         <div className="ticker-track animate-scroll">
