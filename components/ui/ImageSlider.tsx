@@ -66,7 +66,10 @@ export default function ImageSlider() {
 
   return (
     <div className="flex justify-center w-full">
-      <div ref={sliderRef} className="keen-slider max-w-[380px] w-full">
+      <div
+        ref={sliderRef}
+        className="keen-slider w-full max-w-[380px] h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] xl:h-auto overflow-hidden rounded-2xl"
+      >
         {slides.map((slide, i) => (
           <div key={i} className="keen-slider__slide flex justify-center">
             <div

@@ -85,7 +85,7 @@ export default function Featured({ repos }: { repos: Repo[] }) {
           </div>
           {/* ITEM 3 */}
           <div className="dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl">
-            <FadeUpOnView className="p-4">
+            <FadeUpOnView className="p-4 flex flex-col h-full">
               <div className="flex text-center items-center flex-col gap-2">
                 <button
                   onClick={() => handleScrollToSection("skills-section")}
@@ -98,7 +98,9 @@ export default function Featured({ repos }: { repos: Repo[] }) {
                   Covering web, mobile, and UI/UX technologies.
                 </p>
               </div>
-              <NewsTicker />
+              <div className="flex justify-center items-center h-full">
+                <NewsTicker />
+              </div>
             </FadeUpOnView>
           </div>
           {/* ITEM 4 */}
