@@ -14,7 +14,7 @@ export default function SearchBar({
   placeholder = "Search certificates...",
 }: SearchBarProps) {
   return (
-    <div className="relative max-w-md mx-auto mb-6">
+    <div className="relative sm:max-w-md   mb-6">
       <Search className="absolute left-3 top-3.5 text-gray-400" size={18} />
       <input
         type="text"

@@ -28,11 +28,13 @@ export default function AchievementsGrid() {
 
   return (
     <div className="border-t border-neutral-300 dark:border-neutral-700 mt-6">
-      <div className="mt-6 w-full flex justify-between items-center">
-        <div className="self-start">
+      <div className="mt-6 w-full flex flex-col sm:flex-row justify-between items-center">
+        <div className="self-center w-full  md:self-center">
           <SearchBar query={query} setQuery={setQuery} />
         </div>
-        <SelectTab selected={selectedType} setSelected={setSelectedType} />
+        <div className="w-full sm:w-fit">
+          <SelectTab selected={selectedType} setSelected={setSelectedType} />
+        </div>
       </div>
 
       <span className="text-neutral-500 dark:text-neutral-400">

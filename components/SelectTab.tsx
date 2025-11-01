@@ -15,7 +15,7 @@ export default function SelectDropdown({
       <select
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
-        className="w-full max-w-xs px-4 py-2.5 border cursor-pointer border-neutral-300 dark:border-neutral-700 rounded-lg bg-white dark:bg-dark-gray text-gray-900 dark:text-neutral-100 focus:ring-2 focus:ring-neutral-500 focus:outline-none appearance-none pr-10"
+        className="w-full  px-4 py-2.5 border cursor-pointer border-neutral-300 dark:border-neutral-700 rounded-lg bg-white dark:bg-dark-gray text-gray-900 dark:text-neutral-100 focus:ring-2 focus:ring-neutral-500 focus:outline-none appearance-none pr-10"
       >
         <option value="All">All</option>
         <option value="Certificate">Certificate</option>

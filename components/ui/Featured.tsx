@@ -28,24 +28,24 @@ export default function Featured({ repos }: { repos: Repo[] }) {
         Explore everything I&apos;ve crafted, contributed, and accomplished.
       </p>
 
-      <section className="w-full  text-white">
+      <section className="w-full  text-white mt-6 lg:mt-0">
         <div
           className="
             grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
             auto-rows-[minmax(180px,auto)]
-            gap-4 xl:gap-2 
+            gap-4 xl:gap-2  
           "
         >
           {/* ITEM 1 */}
           <div
-            className="
+            className=" 
     dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
     rounded-2xl p-4 flex justify-between
     xl:col-span-2 gap-4
-+   h-[400px]
++   h-[400px] 
   "
           >
-            <FadeUpOnView className="w-full flex justify-between gap-4">
+            <FadeUpOnView className="w-full flex justify-between gap-4 ">
               <div className="w-1/2 space-y-2 flex flex-col items-start">
                 <div className="flex items-start flex-col gap-2">
                   <Link

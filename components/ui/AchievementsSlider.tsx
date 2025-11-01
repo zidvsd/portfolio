@@ -12,7 +12,7 @@ export default function AchievementsSlider() {
       loop: true,
       mode: "snap",
 
-      slides: { perView: 1, spacing: 5 },
+      slides: { perView: 1, spacing: 15 },
     },
     [AutoplayPlugin]
   );
