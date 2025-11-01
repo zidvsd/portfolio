@@ -1,41 +1,11 @@
 "use client";
-import { KeenSliderInstance } from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import { AutoplayPlugin } from "@/lib/AutoplayPlugin";
 import Image from "next/image";
 
 export default function ImageSlider() {
   // --- Autoplay plugin ---
-  function AutoplayPlugin(slider: KeenSliderInstance) {
-    let timeout: ReturnType<typeof setTimeout>;
-    let mouseOver = false;
-
-    function clearNextTimeout() {
-      clearTimeout(timeout);
-    }
-
-    function nextTimeout() {
-      clearTimeout(timeout);
-      if (mouseOver) return;
-      timeout = setTimeout(() => slider.next(), 3500);
-    }
-
-    slider.on("created", () => {
-      slider.container.addEventListener("mouseover", () => {
-        mouseOver = true;
-        clearNextTimeout();
-      });
-      slider.container.addEventListener("mouseout", () => {
-        mouseOver = false;
-        nextTimeout();
-      });
-      nextTimeout();
-    });
-
-    slider.on("dragStarted", clearNextTimeout);
-    slider.on("animationEnded", nextTimeout);
-    slider.on("updated", nextTimeout);
-  }
 
   // --- Image data ---
   const slides = [
@@ -68,7 +38,7 @@ export default function ImageSlider() {
     <div className="flex justify-center w-full">
       <div
         ref={sliderRef}
-        className="keen-slider w-full max-w-[380px] h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] xl:h-auto overflow-hidden rounded-2xl"
+        className="keen-slider w-full max-w-[380px] md:h-[240px] lg:h-[280px] xl:h-auto overflow-hidden rounded-2xl"
       >
         {slides.map((slide, i) => (
           <div key={i} className="keen-slider__slide flex justify-center">

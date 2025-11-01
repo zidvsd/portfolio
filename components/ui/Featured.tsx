@@ -106,7 +106,7 @@ export default function Featured({ repos }: { repos: Repo[] }) {
           {/* ITEM 4 */}
           <div className="dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 rounded-2xl p-4 xl:col-span-2">
             <FadeUpOnView>
-              <div className="flex items-center flex-col gap-2">
+              <div className="flex items-center text-center flex-col gap-2">
                 <Link
                   href={"/achievements"}
                   className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
@@ -114,10 +114,10 @@ export default function Featured({ repos }: { repos: Repo[] }) {
                   <Trophy />
                 </Link>
                 <h2 className="text-lg font-semibold">Achievements</h2>
+                <p className="text-neutral-400 text-sm">
+                  Milestones from programs, projects, and communities.
+                </p>
               </div>
-              <p className="text-neutral-400 text-sm">
-                Milestones from programs, projects, and communities.
-              </p>
               <AchievementsSlider />
             </FadeUpOnView>
           </div>
