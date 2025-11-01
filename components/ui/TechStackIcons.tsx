@@ -3,16 +3,13 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import icons from "@/data/icons.json";
+
 export default function TechStackIcons() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="rounded-2xl p-8 shadow-xl backdrop-blur-sm
-        border border-gray-300/30 dark:border-gray-800/30
-        bg-gradient-to-br from-white/60 to-gray-100/40 
-        dark:from-[#0c0c0c]/60 dark:to-[#1a1a1a]/40 "
     >
       <h2 className="text-xl font-semibold flex items-center gap-2">
         <span className="text-green-500">&lt;/&gt;</span> Skills
@@ -26,7 +23,7 @@ export default function TechStackIcons() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.15, rotate: 5 }}
-            className="transition-all  duration-200 cursor-pointer"
+            className="transition-all duration-200 cursor-pointer"
           >
             <Image
               src={icon.src}

@@ -22,7 +22,7 @@ export default async function Page() {
         A showcase of both private and open-source projects I&apos;ve built or
         contributed to.
       </h3>
-      <ProjectsGrid initialRepos={repos} />;
+      <ProjectsGrid initialRepos={repos} />
     </div>
   );
 }
