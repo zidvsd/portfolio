@@ -23,29 +23,20 @@ export async function getWakaTimeData(): Promise<WakaTimeStats | null> {
     const apiKey = process.env.WAKATIME_API_KEY;
     const username = process.env.WAKATIME_USERNAME;
 
-    console.log("Using WakaTime credentials:", { apiKey, username });
-
     const res = await fetch(
-      `https://wakatime.com/api/v1/users/${username}/stats/last_7_days`,
+      `https://wakatime.com/api/v1/users/current/stats/all_time`,
       {
-        headers: apiKey
-          ? {
-              Authorization: `Basic ${Buffer.from(`${apiKey}:`).toString(
-                "base64"
-              )}`,
-            }
-          : {},
-        next: { revalidate: 3600 }, // Revalidate every hour
+        headers: {
+          Authorization: `Basic ${btoa(`${apiKey}:`)}`,
+        },
+        cache: "no-store",
       }
     );
 
-    if (!res.ok) {
-      const text = await res.text();
-      console.error(`❌ WakaTime API error (${res.status}):`, text);
-      throw new Error("Failed to fetch WakaTime Data");
-    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const data = await res.json();
+    console.log("✅ WakaTime data:", data.data);
 
     return {
       total_hours: data.data.human_readable_total,
