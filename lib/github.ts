@@ -6,10 +6,10 @@ export interface RepoData extends Repo {
   image: string;
 }
 
-export async function getRepoData(repoNames: string[]): Promise<RepoData[]> {
-  const username = "zidvsd";
-  const token = process.env.GITHUB_API_KEY;
+const username = process.env.GITHUB_USERNAME;
 
+export async function getRepoData(repoNames: string[]): Promise<RepoData[]> {
+  const token = process.env.GITHUB_API_KEY;
   if (!token) {
     throw new Error(
       "GITHUB_API_KEY is not defined. Make sure .env is loaded and the server was restarted."
@@ -56,7 +56,6 @@ export async function getRepoData(repoNames: string[]): Promise<RepoData[]> {
 }
 
 export async function getRepoReadme(repo: string): Promise<string | null> {
-  const username = "zidvsd";
   const token = process.env.GITHUB_API_KEY;
 
   if (!token) {
@@ -83,6 +82,42 @@ export async function getRepoReadme(repo: string): Promise<string | null> {
     return await res.text();
   } catch (error) {
     console.error("Error fetching README:", error);
+    return null;
+  }
+}
+
+export async function getGithubDashboard() {
+  try {
+    const res = await fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        Accept: "application/vnd.github+json",
+      },
+      // Optional caching behavior (revalidate every 6 hours)
+      next: { revalidate: 21600 },
+    });
+
+    if (!res.ok) throw new Error("Failed to fetch GitHub data");
+
+    const userData = await res.json();
+
+    // Optional: fetch repo stats too
+    const reposRes = await fetch(userData.repos_url);
+    const repos = await reposRes.json();
+
+    const totalStars = repos.reduce(
+      (sum: number, repo: any) => sum + repo.stargazers_count,
+      0
+    );
+
+    return {
+      name: userData.name,
+      followers: userData.followers,
+      public_repos: userData.public_repos,
+      total_stars: totalStars,
+      avatar_url: userData.avatar_url,
+    };
+  } catch (error) {
+    console.error("GitHub fetch failed:", error);
     return null;
   }
 }
