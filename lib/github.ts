@@ -5,7 +5,9 @@ import { Repo } from "@/types/repo";
 export interface RepoData extends Repo {
   image: string;
 }
-
+interface GitHubRepo {
+  stargazers_count: number;
+}
 const username = process.env.GITHUB_USERNAME;
 
 export async function getRepoData(repoNames: string[]): Promise<RepoData[]> {
@@ -89,10 +91,7 @@ export async function getRepoReadme(repo: string): Promise<string | null> {
 export async function getGithubDashboard() {
   try {
     const res = await fetch(`https://api.github.com/users/${username}`, {
-      headers: {
-        Accept: "application/vnd.github+json",
-      },
-      // Optional caching behavior (revalidate every 6 hours)
+      headers: { Accept: "application/vnd.github+json" },
       next: { revalidate: 21600 },
     });
 
@@ -100,12 +99,11 @@ export async function getGithubDashboard() {
 
     const userData = await res.json();
 
-    // Optional: fetch repo stats too
     const reposRes = await fetch(userData.repos_url);
-    const repos = await reposRes.json();
+    const repos: GitHubRepo[] = await reposRes.json();
 
     const totalStars = repos.reduce(
-      (sum: number, repo: any) => sum + repo.stargazers_count,
+      (sum, repo) => sum + (repo.stargazers_count || 0),
       0
     );
 

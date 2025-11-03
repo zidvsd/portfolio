@@ -1,3 +1,19 @@
+interface WakaLanguage {
+  name: string;
+  percent: number;
+}
+interface WakaEditor {
+  name: string;
+  percent: number;
+}
+interface WakaTimeResponse {
+  data: {
+    human_readable_total: string;
+    human_readable_daily_average: string;
+    languages: WakaLanguage[];
+    editors: WakaEditor[];
+  };
+}
 export async function getWakaTimeData() {
   try {
     const apiKey = process.env.WAKATIME_API_KEY;
@@ -26,16 +42,10 @@ export async function getWakaTimeData() {
     const data = await res.json();
 
     return {
-      total_hours: data.data.human_readable_total, // e.g., "12 hrs 45 mins"
-      daily_average: data.data.human_readable_daily_average, // e.g., "1 hr 48 mins"
-      top_languages: data.data.languages.slice(0, 5).map((lang: any) => ({
-        name: lang.name,
-        percent: lang.percent,
-      })),
-      top_editors: data.data.editors.slice(0, 3).map((editor: any) => ({
-        name: editor.name,
-        percent: editor.percent,
-      })),
+      total_hours: data.data.human_readable_total,
+      daily_average: data.data.human_readable_daily_average,
+      top_languages: data.data.languages.slice(0, 5),
+      top_editors: data.data.editors.slice(0, 3),
     };
   } catch (error) {
     console.error("WakaTime fetch failed:", error);
