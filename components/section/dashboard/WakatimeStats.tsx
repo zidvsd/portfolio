@@ -1,8 +1,7 @@
-// components/section/dashboard/WakaTimeStats.tsx
-import { getWakaTimeData } from "@/lib/wakatime";
+import { getWakaTimeData, WakaTimeStats } from "@/lib/wakatime";
 
 export default async function WakatimeStats() {
-  const stats = await getWakaTimeData();
+  const stats: WakaTimeStats | null = await getWakaTimeData();
 
   if (!stats) {
     return (

@@ -1,25 +1,30 @@
+// lib/wakatime.ts
+
 interface WakaLanguage {
   name: string;
   percent: number;
 }
+
 interface WakaEditor {
   name: string;
   percent: number;
 }
-interface WakaTimeResponse {
-  data: {
-    human_readable_total: string;
-    human_readable_daily_average: string;
-    languages: WakaLanguage[];
-    editors: WakaEditor[];
-  };
+
+// ✅ This matches what getWakaTimeData() actually returns
+export interface WakaTimeStats {
+  total_hours: string;
+  daily_average: string;
+  top_languages: WakaLanguage[];
+  top_editors: WakaEditor[];
 }
-export async function getWakaTimeData() {
+
+export async function getWakaTimeData(): Promise<WakaTimeStats | null> {
   try {
     const apiKey = process.env.WAKATIME_API_KEY;
     const username = process.env.WAKATIME_USERNAME;
-    console.log(apiKey);
-    console.log(username);
+
+    console.log("Using WakaTime credentials:", { apiKey, username });
+
     const res = await fetch(
       `https://wakatime.com/api/v1/users/${username}/stats/last_7_days`,
       {
@@ -39,6 +44,7 @@ export async function getWakaTimeData() {
       console.error(`❌ WakaTime API error (${res.status}):`, text);
       throw new Error("Failed to fetch WakaTime Data");
     }
+
     const data = await res.json();
 
     return {
