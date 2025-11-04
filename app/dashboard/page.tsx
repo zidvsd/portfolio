@@ -1,10 +1,14 @@
 import { BarChart3, Code2, GitCommitHorizontal, Clock } from "lucide-react";
 import GithubStats from "@/components/section/dashboard/GithubStats";
-import WakatimeStats from "@/components/section/dashboard/WakatimeStats";
 import WakaTimeChart from "@/components/section/dashboard/WakaTimeChart";
 import { getWakaTimeData } from "@/lib/wakatime";
+import { getGithubDashboard } from "@/lib/github";
+import { getTopLanguages } from "@/lib/github";
+import TechProficiencyChart from "@/components/section/dashboard/TechProficiencyChart";
 export default async function page() {
   const stats = await getWakaTimeData();
+  const GitHubDashboard = await getGithubDashboard();
+  const languages = await getTopLanguages();
   const overViewStats = [
     { title: "Projects Completed", value: "12", icon: Code2 },
     { title: "GitHub Stars", value: "30", icon: BarChart3 },
@@ -46,7 +50,13 @@ export default async function page() {
         </h3>
       </div>
       <WakaTimeChart stats={stats} />
-      <GithubStats />
+      <GithubStats data={GitHubDashboard} />
+      <TechProficiencyChart
+        data={languages.map((lang) => ({
+          name: lang.language,
+          level: lang.count * 10, // scale it to look like %
+        }))}
+      />
       {/* Overview Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {overViewStats.map((item, index) => (

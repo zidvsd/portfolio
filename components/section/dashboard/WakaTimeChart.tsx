@@ -7,7 +7,7 @@ interface Props {
   stats: WakaTimeStats | null;
 }
 
-export default function WakaTimeStats({ stats }: Props) {
+export default function WakaTimeChart({ stats }: Props) {
   const wakaProfile = "https://wakatime.com/@zidvsd";
 
   if (!stats) {
@@ -24,21 +24,27 @@ export default function WakaTimeStats({ stats }: Props) {
   }
 
   return (
-    <div className="p-5 rounded-xl  bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4">
+    <div className="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4">
       {/* Header with WakaTime logo */}
       <div className="flex items-center space-x-2">
         <a href={wakaProfile} target="_blank" rel="noopener noreferrer">
           <Image
-            src="/icons/wakatime.svg" // make sure this path points to your WakaTime logo
+            src="/icons/wakatime.svg" // path to your WakaTime logo
             alt="WakaTime Logo"
             width={32}
             height={32}
-            className=" p-1 rounded-full dark:bg-accent "
+            className="p-1 rounded-full dark:bg-white"
           />
         </a>
-        <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
-          Coding Activity (Last 7 Days)
-        </h2>
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
+            Coding Activity (Last 7 Days)
+          </h2>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            A summary of my coding hours tracked over the past week using
+            WakaTime.
+          </p>
+        </div>
       </div>
 
       {/* Stats */}

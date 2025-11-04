@@ -7,6 +7,8 @@ export interface RepoData extends Repo {
 }
 interface GitHubRepo {
   stargazers_count: number;
+  name: string;
+  owner: { login: string };
 }
 const username = process.env.GITHUB_USERNAME;
 
@@ -113,9 +115,50 @@ export async function getGithubDashboard() {
       public_repos: userData.public_repos,
       total_stars: totalStars,
       avatar_url: userData.avatar_url,
+      username: userData.login,
     };
   } catch (error) {
     console.error("GitHub fetch failed:", error);
     return null;
+  }
+}
+
+export async function getTopLanguages() {
+  const token = process.env.GITHUB_API_KEY;
+  try {
+    const reposRes = await fetch(
+      `https://api.github.com/users/${username}/repos`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+        next: { revalidate: 21600 },
+      }
+    );
+
+    if (!reposRes.ok) {
+      throw new Error(`Failed to fetch repos: ${reposRes.status}`);
+    }
+
+    const repos = await reposRes.json();
+
+    // Count how often each language appears
+    const languageCount: Record<string, number> = {};
+
+    for (const repo of repos) {
+      if (!repo.language) continue;
+      languageCount[repo.language] = (languageCount[repo.language] || 0) + 1;
+    }
+
+    // Sort by most used languages
+    const sortedLanguages = Object.entries(languageCount)
+      .sort(([, a], [, b]) => b - a)
+      .map(([language, count]) => ({ language, count }));
+
+    return sortedLanguages; // e.g. [ { language: "JavaScript", count: 12 }, { language: "TypeScript", count: 4 } ]
+  } catch (error) {
+    console.error("Error fetching top languages:", error);
+    return [];
   }
 }
