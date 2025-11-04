@@ -1,5 +1,5 @@
 // lib/wakatime.ts
-
+"use server";
 interface WakaLanguage {
   name: string;
   percent: number;
@@ -24,10 +24,12 @@ export async function getWakaTimeData(): Promise<WakaTimeStats | null> {
     const username = process.env.WAKATIME_USERNAME;
 
     const res = await fetch(
-      `https://wakatime.com/api/v1/users/current/stats/all_time`,
+      `https://wakatime.com/api/v1/users/current/stats/last_7_days`,
       {
         headers: {
-          Authorization: `Basic ${btoa(`${apiKey}:`)}`,
+          Authorization: `Basic ${Buffer.from(`${apiKey}:`).toString(
+            "base64"
+          )}`,
         },
         cache: "no-store",
       }
@@ -36,7 +38,7 @@ export async function getWakaTimeData(): Promise<WakaTimeStats | null> {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const data = await res.json();
-    console.log("✅ WakaTime data:", data.data);
+    console.log(data);
 
     return {
       total_hours: data.data.human_readable_total,

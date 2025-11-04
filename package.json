@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "chart.js": "^4.5.1",
     "dayjs": "^1.11.18",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.545.0",
@@ -17,6 +18,7 @@
     "next": "^15.5.4",
     "nextjs-toploader": "^3.9.17",
     "react": "19.1.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "19.1.0",
     "react-loading-skeleton": "^3.5.0"
   },

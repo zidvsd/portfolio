@@ -1,8 +1,11 @@
 import { BarChart3, Code2, GitCommitHorizontal, Clock } from "lucide-react";
 import GithubStats from "@/components/section/dashboard/GithubStats";
 import WakatimeStats from "@/components/section/dashboard/WakatimeStats";
-export default function page() {
-  const stats = [
+import WakaTimeChart from "@/components/section/dashboard/WakaTimeChart";
+import { getWakaTimeData } from "@/lib/wakatime";
+export default async function page() {
+  const stats = await getWakaTimeData();
+  const overViewStats = [
     { title: "Projects Completed", value: "12", icon: Code2 },
     { title: "GitHub Stars", value: "30", icon: BarChart3 },
     { title: "Total Commits", value: "12", icon: GitCommitHorizontal },
@@ -33,7 +36,7 @@ export default function page() {
   ];
 
   return (
-    <div className="p-6 space-y-10">
+    <div className="p-6 space-y-10 custom-container">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-semibold">Dashboard</h1>
@@ -42,11 +45,11 @@ export default function page() {
           professional and academic journey.
         </h3>
       </div>
-      <WakatimeStats />
+      <WakaTimeChart stats={stats} />
       <GithubStats />
       {/* Overview Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((item, index) => (
+        {overViewStats.map((item, index) => (
           <div
             key={index}
             className="flex items-center p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-all"
