@@ -75,6 +75,7 @@ export default function TechProficiencyChart({
 
   const options: ChartOptions<"bar"> = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
       tooltip: {
@@ -117,7 +118,7 @@ export default function TechProficiencyChart({
       <h2 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">
         Most Used Technologies
       </h2>
-      <div className="w-full h-[300px]">
+      <div className="w-full h-[400px]">
         <Bar data={chartData} options={options} />
       </div>
     </div>

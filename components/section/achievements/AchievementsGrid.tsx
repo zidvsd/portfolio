@@ -51,7 +51,7 @@ export default function AchievementsGrid() {
               className="block group"
             >
               {/* Card */}
-              <div className="flex flex-col rounded-xl border border-neutral-300 dark:border-neutral-700 shadow-sm hover:shadow-lg overflow-hidden bg-white dark:bg-dark-gray h-[20rem] transition-all">
+              <div className="flex flex-col rounded-xl border border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-lg overflow-hidden bg-white dark:bg-dark-gray h-[20rem] transition-all">
                 {/* Image - fills top half */}
                 <div className="relative w-full h-1/2 overflow-hidden">
                   <Image

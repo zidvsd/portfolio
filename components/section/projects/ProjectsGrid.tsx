@@ -19,7 +19,7 @@ export default function ProjectsGrid({ initialRepos }: ProjectsGridProps) {
           className="block group"
         >
           {/* Full card fixed height */}
-          <div className="flex flex-col rounded-xl border border-neutral-300 dark:border-neutral-700 shadow-sm hover:shadow-lg overflow-hidden bg-white dark:bg-dark-gray h-[32rem]">
+          <div className="flex flex-col rounded-xl border border-neutral-300 dark:border-neutral-700 shadow-lg hover:shadow-lg overflow-hidden bg-white dark:bg-dark-gray h-[32rem]">
             {/* Image takes fixed portion */}
             <div className="relative w-full h-64 overflow-hidden">
               <Image

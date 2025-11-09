@@ -42,7 +42,7 @@ export default async function RecentActivity() {
         {recentProjects.map((activity, i) => (
           <div
             key={i}
-            className="flex justify-between items-center p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all"
+            className="flex justify-between hover-utility items-center p-4 rounded-lg shadow-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-neutral-50 dark:hover:bg-neutral-800"
           >
             <div className="flex flex-col">
               <span className="text-neutral-800 dark:text-neutral-200 font-medium">
