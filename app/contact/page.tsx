@@ -16,7 +16,7 @@ export default function ContactPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   return (
-    <main className=" custom-container px-6 py-12 flex flex-col items-center text-neutral-900 dark:text-white">
+    <main className=" custom-container px-6  flex flex-col items-center text-neutral-900 dark:text-white">
       {/* Header */}
       <section className="w-full wmb-12">
         <h1 className="text-2xl font-semibold mb-2">Contact</h1>
@@ -27,7 +27,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="w-full grid md:grid-cols-2 gap-12 border-t border-neutral-200 dark:border-neutral-800 pt-6 mt-6">
+      <section className="w-full grid md:grid-cols-2 gap-12 border-t border-neutral-200 dark:border-neutral-700 pt-6 mt-6">
         {/* Contact Form */}
         <form className="p-8 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-5">
           <h2 className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-white">
@@ -120,14 +120,14 @@ export default function ContactPage() {
                 <Github className="text-neutral-800 dark:text-white" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/rashid-visda/"
                 target="_blank"
                 className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 hover:bg-accent dark:hover:bg-accent hover-utility"
               >
                 <Linkedin className="text-neutral-800 dark:text-white" />
               </a>
               <a
-                href="#"
+                href="https://portfolio-five-sand-23.vercel.app/"
                 target="_blank"
                 className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 hover:bg-accent dark:hover:bg-accent hover-utility"
               >

@@ -12,7 +12,7 @@ export default function WakaTimeChart({ stats }: Props) {
 
   if (!stats) {
     return (
-      <div className="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm">
+      <div className="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm ">
         <h2 className="text-xl font-semibold mb-4 text-neutral-900 dark:text-white">
           WakaTime Stats
         </h2>

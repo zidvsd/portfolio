@@ -12,7 +12,7 @@ export default async function page() {
   const languages = await getTopLanguages();
 
   return (
-    <div className="p-6 space-y-10 custom-container">
+    <div className="custom-container">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-semibold">Dashboard</h1>
@@ -21,18 +21,26 @@ export default async function page() {
           professional and academic journey.
         </h3>
       </div>
-      <WakaTimeChart stats={stats} />
-      <GithubStats data={GitHubDashboard} />
-      <TechProficiencyChart
-        data={languages.map((lang) => ({
-          name: lang.language,
-          level: lang.count * 10, // scale it to look like %
-        }))}
-      />
 
-      {/* Recent Activity */}
-      <div>
-        <RecentActivity />
+      <div className="space-y-6">
+        <div className="border-t border-t-neutral-300 dark:border-t-neutral-700 pt-6 mt-6">
+          <WakaTimeChart stats={stats} />
+        </div>
+        <div>
+          <GithubStats data={GitHubDashboard} />
+        </div>
+        <div>
+          <TechProficiencyChart
+            data={languages.map((lang) => ({
+              name: lang.language,
+              level: lang.count * 10, // scale it to look like %
+            }))}
+          />
+        </div>
+        {/* Recent Activity */}
+        <div>
+          <RecentActivity />
+        </div>
       </div>
     </div>
   );
