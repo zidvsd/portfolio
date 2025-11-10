@@ -76,14 +76,14 @@ export default function ContactPage() {
         </form>
 
         {/* Contact Info */}
-        <div className="p-8 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
+        <div className="p-8 rounded-xl  dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
           <div>
             <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white mb-3">
               Get in Touch
             </h2>
-            <p className="text-accent dark:text-neutral-400 mb-6">
-              I’m always open to talking about new projects, creative ideas, or
-              opportunities to be part of your vision.
+            <p className=" text-neutral-600 dark:text-neutral-400 mb-6">
+              I&apos;m always open to talking about new projects, creative
+              ideas, or opportunities to be part of your vision.
             </p>
 
             <div className="space-y-4">
@@ -115,23 +115,25 @@ export default function ContactPage() {
               <a
                 href="https://github.com/zidvsd"
                 target="_blank"
-                className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 hover:bg-accent dark:hover:bg-accent hover-utility"
+                className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 transition-colors hover:bg-accent dark:hover:bg-accent"
               >
-                <Github className="text-neutral-800 dark:text-white" />
+                <Github className="text-neutral-800 dark:text-white " />
               </a>
+
               <a
                 href="https://www.linkedin.com/in/rashid-visda/"
                 target="_blank"
-                className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 hover:bg-accent dark:hover:bg-accent hover-utility"
+                className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 transition-colors hover:bg-accent dark:hover:bg-accent"
               >
-                <Linkedin className="text-neutral-800 dark:text-white" />
+                <Linkedin className="text-neutral-800 dark:text-white " />
               </a>
+
               <a
                 href="https://portfolio-five-sand-23.vercel.app/"
                 target="_blank"
-                className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 hover:bg-accent dark:hover:bg-accent hover-utility"
+                className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 transition-colors hover:bg-accent dark:hover:bg-accent"
               >
-                <Globe className="text-neutral-800 dark:text-white" />
+                <Globe className="text-neutral-800 dark:text-white " />
               </a>
             </div>
           </div>
