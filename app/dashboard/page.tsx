@@ -11,21 +11,6 @@ export default async function page() {
   const GitHubDashboard = await getGithubDashboard();
   const languages = await getTopLanguages();
 
-  const recentActivities = [
-    {
-      title: "Added new portfolio project",
-      date: "Oct 25, 2025",
-    },
-    {
-      title: "Redesigned homepage with dark mode",
-      date: "Oct 20, 2025",
-    },
-    {
-      title: "Fixed responsive layout in About page",
-      date: "Oct 15, 2025",
-    },
-  ];
-
   return (
     <div className="p-6 space-y-10 custom-container">
       {/* Header */}
