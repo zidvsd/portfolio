@@ -15,6 +15,7 @@ import FadeUpOnView from "../FadeUpOnView";
 import AchievementsSlider from "./AchievementsSlider";
 import { handleScrollToSection } from "@/lib/utils";
 import { Repo } from "@/types/repo";
+import ServicesCard from "./ServicesCard";
 
 export default function Featured({ repos }: { repos: Repo[] }) {
   return (
@@ -123,29 +124,8 @@ export default function Featured({ repos }: { repos: Repo[] }) {
           </div>
 
           {/* ✅ ITEM 5 - Services (Fixed) */}
-          <div
-            className="
-              dark:bg-neutral-800 text-off-gray border border-neutral-300 dark:border-neutral-600 
-              rounded-2xl p-4 flex justify-between items-center
-              md:col-span-2 lg:col-span-2 xl:col-span-2
-            "
-          >
-            <FadeUpOnView className="w-full flex justify-between gap-4">
-              <div className="w-1/2 space-y-2 flex flex-col items-start">
-                <div className="flex items-start flex-col gap-2">
-                  <Link
-                    href="/contact"
-                    className="rounded-md p-4 bg-neutral-200 dark:bg-neutral-700"
-                  >
-                    <Briefcase />
-                  </Link>
-                  <h2 className="text-lg font-semibold">Services</h2>
-                </div>
-                <p className="text-neutral-400 text-sm">
-                  End-to-end solutions in web, mobile, AI, and design.
-                </p>
-              </div>
-            </FadeUpOnView>
+          <div className="w-full xl:col-span-2 md:col-span-2">
+            <ServicesCard />
           </div>
         </div>
       </section>

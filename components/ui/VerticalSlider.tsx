@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Repo } from "@/types/repo";
 import repoImages from "@/data/projectImages.json";
 import Link from "next/link";
+import { AutoplayPlugin } from "@/lib/AutoplayPlugin";
 interface RepoImageData {
   name: string;
   image: string;
@@ -13,15 +14,19 @@ interface RepoImageData {
 }
 
 export default function VerticalSlider({ repos }: { repos?: Repo[] }) {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    vertical: true,
-    slides: {
-      perView: 3,
-      spacing: 10,
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
+    {
+      vertical: true,
+
+      slides: {
+        perView: 3,
+        spacing: 10,
+      },
+      loop: true,
+      mode: "snap",
     },
-    loop: true,
-    mode: "snap",
-  });
+    [AutoplayPlugin]
+  );
 
   if (!repos || repos.length === 0) {
     return (
