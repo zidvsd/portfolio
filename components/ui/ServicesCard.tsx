@@ -53,8 +53,7 @@ export default function ServicesCard() {
                 filter: highlightedIndex === index ? "blur(0px)" : "blur(2px)",
               }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="
-                text-md font-semibold py-6 px-4 rounded-xl 
+              className="text-sm  md:text-md font-semibold py-6 px-4 rounded-xl 
                 bg-neutral-200 dark:bg-neutral-700 text-center
                 dark:text-neutral-100 text-neutral-800 select-none
               "
