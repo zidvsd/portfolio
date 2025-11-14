@@ -27,7 +27,7 @@
     <li><strong>🧠 Dynamic Content</strong>: Real-time data fetching from GitHub and WakaTime APIs.</li>
     <li><strong>📈 Interactive Charts</strong>: Visualized analytics of my most used technologies and coding activity using Chart.js.</li>
     <li><strong>🔍 Smart Filtering</strong>: Search and filter badges or certificates on the Achievements page.</li>
-    <li><strong>📬 Contact Form</strong>: Direct-to-email submission powered by mail integration.</li>
+    <li><strong>📬 Contact Form</strong>: Direct-to-email submission powered by Nodemailer with toast notifications via Sonner.</li>
     <li><strong>🗺️ Google Maps Embed</strong>: Displays my general location within the Contact page.</li>
     <li><strong>💬 FAQ Section</strong>: Expandable dropdowns for quick answers to common questions.</li>
     <li><strong>⚡ Fast Performance</strong>: Built with Next.js 15 and Turbopack for optimal load times.</li>
@@ -49,14 +49,14 @@
   <h3>🏆 Achievements Page</h3>
   <ul>
     <li>Displays all <strong>badges</strong> and <strong>certificates</strong> using images hosted on Google Drive.</li>
-    <li>Includes a <strong>search and filter system</strong> allowing users to toggle between “Certificates” and “Badges”.</li>
+    <li>Includes a <strong>search and filter system</strong> allowing users to toggle between "Certificates" and "Badges".</li>
     <li>Each item includes details like title, issuer, and date earned.</li>
   </ul>
   <h3>💻 Projects Page</h3>
   <ul>
     <li>Automatically fetches my <strong>top 6 pinned repositories</strong> from the GitHub API.</li>
     <li>Displays <strong>topics/tags</strong> to show technologies used in each project.</li>
-    <li>Each project links to a <strong>dynamic page</strong> that fetches directly from the project’s <strong>README</strong> file.</li>
+    <li>Each project links to a <strong>dynamic page</strong> that fetches directly from the project's <strong>README</strong> file.</li>
     <li>Ensures visitors can view project details and technologies in a seamless and consistent design.</li>
   </ul>
   <h3>📊 Dashboard Page</h3>
@@ -73,19 +73,40 @@
   </ul>
   <h3>📞 Contact Page</h3>
   <ul>
-    <li>Includes a <strong>direct email form</strong> that allows users to send messages straight to my inbox.</li>
+    <li>Includes a <strong>direct email form</strong> powered by <strong>Nodemailer</strong> that sends messages straight to my inbox.</li>
+    <li>Toast notifications via <strong>Sonner</strong> provide real-time feedback on form submission status.</li>
     <li>Embeds <strong>Google Maps</strong> for my general location display.</li>
     <li>Contains all <strong>social links</strong> (GitHub, LinkedIn, etc.) with interactive hover effects.</li>
     <li>Features a <strong>FAQ dropdown</strong> section for quick, organized access to answers.</li>
   </ul>
   <h2>🔧 Environment Variables</h2>
-  <p>These are required to fetch real-time data securely:</p>
-  <ul>
-    <li><code>GITHUB_API_KEY</code> – GitHub personal access token.</li>
-    <li><code>GITHUB_USERNAME</code> – Your GitHub username for fetching repositories.</li>
-    <li><code>WAKATIME_API_KEY</code> – WakaTime API key for coding activity data.</li>
-    <li><code>WAKATIME_USERNAME</code> – Your WakaTime username for fetching stats.</li>
-  </ul>
+  <p>These are required to fetch real-time data and enable contact form functionality securely:</p>
+  <pre><code># GitHub API
+GITHUB_API_KEY=your_github_api_key
+GITHUB_USERNAME=your_github_username
+
+# WakaTime API
+
+WAKATIME_API_KEY=your_wakatime_api_key
+WAKATIME_USERNAME=your_wakatime_username
+
+# Email Configuration (Nodemailer)
+
+MAIL_USER=your_email@gmail.com
+MAIL_PASS=your_app_specific_password
+MAIL_TO=recipient_email@gmail.com
+</code></pre>
+
+  <h3>📧 Email Setup Guide</h3>
+  <p>To enable the contact form:</p>
+  <ol>
+    <li>Use a Gmail account or any SMTP-supported email service</li>
+    <li>For Gmail, generate an <strong>App Password</strong> from your Google Account settings</li>
+    <li><code>MAIL_USER</code>: Your sending email address</li>
+    <li><code>MAIL_PASS</code>: Your app-specific password (not your regular password)</li>
+    <li><code>MAIL_TO</code>: The email address where you want to receive contact form submissions</li>
+  </ol>
+
   <h2>🧠 Tech Stack</h2>
   <ul>
     <li><strong>Framework:</strong> Next.js 15 (with Turbopack)</li>
@@ -99,7 +120,11 @@
     <li><strong>Loading States:</strong> React Loading Skeleton</li>
     <li><strong>Markdown Parser:</strong> Marked.js (for dynamic project READMEs)</li>
     <li><strong>Progress Indicator:</strong> Next.js Top Loader</li>
+    <li><strong>Email Service:</strong> Nodemailer</li>
+    <li><strong>Toast Notifications:</strong> Sonner</li>
   </ul>
+
+  <h2>🛠️ Installation &amp; Setup</h2>
   <h3>⚙️ Prerequisites</h3>
   <ul>
     <li>Node.js (version 18 or higher)</li>
@@ -121,11 +146,13 @@
     </li>
     <li>
       Add your environment variables in a <code>.env.local</code> file:
-      <pre><code>
-GITHUB_API_KEY=your_github_api_key
+      <pre><code>GITHUB_API_KEY=your_github_api_key
 GITHUB_USERNAME=your_github_username
 WAKATIME_API_KEY=your_wakatime_api_key
 WAKATIME_USERNAME=your_wakatime_username
+MAIL_USER=your_email@gmail.com
+MAIL_PASS=your_app_specific_password
+MAIL_TO=recipient_email@gmail.com
       </code></pre>
     </li>
     <li>
@@ -156,5 +183,7 @@ WAKATIME_USERNAME=your_wakatime_username
   <p>
     You can also connect with me on my social platforms linked on the Contact page.
   </p>
+  <hr>
+  <p style="text-align: center;">Made with ❤️ by Rashid Visda</p>
 </body>
 </html>
