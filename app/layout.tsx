@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import { Providers } from "@/providers/providers";
 import NextTopLoader from "nextjs-toploader";
 import AnimatedPageWrapper from "@/components/layout/AnimatePageWrapper";
+import { Toaster } from "sonner";
 const onest = Onest({
   subsets: ["latin"],
   variable: "--font-onest",
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${onest.variable} antialiased  font-onest`}>
         <NextTopLoader color="#16a34a" />
+        <Toaster position="top-right" />
         <Providers>
           <div className="min-h-screen ">
             {/* lg screen 20/80 grid */}

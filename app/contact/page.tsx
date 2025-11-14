@@ -11,7 +11,7 @@ import {
   Globe,
 } from "lucide-react";
 import faqs from "@/data/faqs.json";
-
+import Form from "@/components/section/contact/Form";
 export default function ContactPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
@@ -29,52 +29,9 @@ export default function ContactPage() {
       {/* Contact Section */}
       <section className="w-full grid md:grid-cols-2 gap-12 border-t border-neutral-200 dark:border-neutral-700 pt-6 mt-6">
         {/* Contact Form */}
-        <form className="p-8 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-5">
-          <h2 className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-white">
-            Send a Message
-          </h2>
-
-          <div>
-            <label className="block text-sm font-medium mb-1 text-neutral-700 dark:text-neutral-400">
-              Name
-            </label>
-            <input
-              type="text"
-              placeholder="Your name"
-              className="w-full px-4 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-green-500 focus:outline-none text-neutral-900 dark:text-white"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1 text-neutral-700 dark:text-neutral-400">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="you@example.com"
-              className="w-full px-4 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-green-500 focus:outline-none text-neutral-900 dark:text-white"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1 text-neutral-700 dark:text-neutral-400">
-              Message
-            </label>
-            <textarea
-              placeholder="Type your message here..."
-              rows={5}
-              className="w-full px-4 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 focus:ring-2 focus:ring-green-500 focus:outline-none text-neutral-900 dark:text-white resize-none"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full cursor-pointer bg-accent hover:bg-green-700 text-white py-3 rounded-lg font-medium hover-utility"
-          >
-            Send
-          </button>
-        </form>
-
+        <div className="flex flex-col h-full">
+          <Form />
+        </div>
         {/* Contact Info */}
         <div className="p-8 rounded-xl  dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
           <div>
