@@ -102,10 +102,11 @@ export default async function Page({ params }: ProjectProps) {
       {/* Render README properly */}
       <article className="space-y-2 prose dark:prose-invert max-w-none">
         <ReactMarkdown
-          children={readme || "No README found."}
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}
-        />
+        >
+          {readme || "No README found."}
+        </ReactMarkdown>
       </article>
     </div>
   );
