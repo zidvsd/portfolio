@@ -1,37 +1,41 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 import { TitleCase } from "@/lib/utils";
 import { ExternalLink, Github } from "lucide-react";
 import { getRepoReadme } from "@/lib/github";
-import { marked } from "marked";
 import Image from "next/image";
 import projectImages from "@/data/projectImages.json";
 import BackButton from "@/components/buttons/BackButton";
 import { extractTechIcons } from "@/lib/techIcons";
+
 interface ProjectProps {
   params: { projectId: string };
 }
 
 export default async function Page({ params }: ProjectProps) {
-  const { projectId } = await params;
+  const { projectId } = params;
   const readme = await getRepoReadme(projectId);
+
   const username = "zidvsd";
   const matchImg = projectImages.find((img) => img.name === projectId);
   const liveDemoMatch = projectImages.find((demo) => demo.name === projectId);
   const liveDemoUrl = liveDemoMatch?.["live-demo"] || null;
   const imageSrc = matchImg ? matchImg.image : "/placeholder.png";
-  // convert to html
-  const htmlContent = readme ? marked.parse(readme) : "<p>No README found.</p>";
+
   let techStackIcons = extractTechIcons(readme || "");
   techStackIcons = Array.from(
     new Map(techStackIcons.map((icon) => [icon.alt, icon])).values()
   );
 
   return (
-    <div className=" py-10 space-y-6 custom-container">
+    <div className="py-10 space-y-6 custom-container">
       <BackButton />
       <h1 className="text-3xl font-bold mb-6 tracking-tight">
         {TitleCase(projectId)}
       </h1>
+
       <div className="flex flex-col lg:flex-row items-center lg:justify-between border-t border-neutral-300 dark:border-neutral-600 pt-6 mt-4 gap-6">
         {/* Tech Stack Icons */}
         <div className="flex items-center gap-2">
@@ -57,6 +61,7 @@ export default async function Page({ params }: ProjectProps) {
             </div>
           )}
         </div>
+
         {/* Links */}
         <div className="flex items-center gap-6">
           <a
@@ -81,7 +86,9 @@ export default async function Page({ params }: ProjectProps) {
           )}
         </div>
       </div>
-      <div className="relative w-full aspect-video overflow-hidden  border border-neutral-300 dark:border-neutral-700">
+
+      {/* Project Image */}
+      <div className="relative w-full aspect-video overflow-hidden border border-neutral-300 dark:border-neutral-700">
         <Image
           src={imageSrc.startsWith("/") ? imageSrc : `/${imageSrc}`}
           alt={`${projectId}-img`}
@@ -92,27 +99,14 @@ export default async function Page({ params }: ProjectProps) {
         />
       </div>
 
-      {/* Render formatted HTML */}
-
-      <article
-        className="
-    prose dark:prose-invert max-w-none leading-relaxed
-    prose-headings:scroll-mt-20
-    prose-h1:text-4xl prose-h1:font-bold prose-h1:mb-6
-    prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-10 prose-h2:border-b prose-h2:border-neutral-300 dark:prose-h2:border-neutral-700 pb-2
-    prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-6
-    prose-p:text-base prose-p:leading-7
-    prose-li:marker:text-accent prose-ul:list-disc prose-ul:ml-6
-    prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-sm prose-code:font-medium
-    prose-pre:bg-muted prose-pre:p-4 prose-pre:rounded-xl prose-pre:border prose-pre:border-border
-    prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-    prose-img:rounded-xl prose-img:shadow-md
-    transition-colors duration-300
-  "
-        dangerouslySetInnerHTML={{
-          __html: htmlContent || "<p>No readme found.</p>",
-        }}
-      />
+      {/* Render README properly */}
+      <article className="space-y-2 prose dark:prose-invert max-w-none">
+        <ReactMarkdown
+          children={readme || "No README found."}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeHighlight]}
+        />
+      </article>
     </div>
   );
 }

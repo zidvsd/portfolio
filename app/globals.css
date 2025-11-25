@@ -90,3 +90,46 @@ body {
     transform: translateX(0);
   }
 }
+
+.prose pre {
+  @apply bg-gray-100 dark:bg-neutral-800 rounded-xl p-4 border border-neutral-300 dark:border-neutral-700 overflow-x-auto;
+}
+
+.prose code {
+  @apply bg-gray-200 dark:bg-neutral-700 px-1.5 py-0.5 rounded-md text-sm font-medium;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold mb-6 mt-10;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-10 mb-4 border-b border-neutral-300 dark:border-neutral-700 pb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-2;
+}
+
+.prose img {
+  @apply rounded-xl shadow-md;
+}
+
+.prose a {
+  @apply text-accent no-underline hover:underline;
+}
+
+.prose ul {
+  @apply list-disc ml-6;
+}
+
+.prose li::marker {
+  @apply text-accent;
+}
+
+/* Optional: scroll margin for anchor links on headings */
+.prose h1,
+.prose h2,
+.prose h3 {
+  scroll-margin-top: 5rem;
+}

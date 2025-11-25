@@ -6,6 +6,10 @@
 
 ---
 
+## Demo
+
+Live demo: [https://portfolio-five-sand-23.vercel.app/](https://portfolio-five-sand-23.vercel.app/)
+
 ## What this project does
 
 This repository is a personal developer portfolio (website) that showcases projects, achievements, and analytics. It's implemented with the Next.js 15 App Router, TypeScript, Tailwind CSS, and several UI/analytics integrations (Chart.js, Lucide icons, Keen Slider, WakaTime & GitHub data fetchers).
