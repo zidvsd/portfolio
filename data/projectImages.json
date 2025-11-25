@@ -27,5 +27,10 @@
     "name": "recipe-app",
     "image": "/images/projects/recipe-app.png",
     "live-demo": "https://recipe-app-azure-gamma.vercel.app/"
+  },
+  {
+    "name": "stash",
+    "image": "/images/projects/stash.png",
+    "live-demo": "https://stash-lemon.vercel.app/"
   }
 ]

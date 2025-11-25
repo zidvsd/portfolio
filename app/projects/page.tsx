@@ -9,6 +9,7 @@ export const repoNames = [
   "recipe-app",
   "brew-haven",
   "le-dream",
+  "stash"
 ];
 
 export default async function Page() {

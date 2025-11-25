@@ -1,189 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-  <h1>🌐 Live Demo</h1>
-  <p>
-    Check it out on Vercel:
-    <a href="https://portfolio-five-sand-23.vercel.app/" target="_blank">
-      https://portfolio-five-sand-23.vercel.app/
-    </a>
-  </p>
-  <h1>💼 Rashid Visda – Developer Portfolio</h1>
-  <p>
-    A modern, dynamic, and API-powered personal portfolio built with <strong>Next.js 15</strong>,
-    <strong>TypeScript</strong>, and <strong>Tailwind CSS 4</strong>.  
-    It showcases my skills, projects, achievements, and analytics as a <strong>Web Developer</strong>, 
-    <strong>Web Designer</strong>, and <strong>Data Analyst</strong>.
-    The site is <strong>light/dark mode friendly</strong> and designed with a minimal bento-inspired layout that brings a professional and interactive presentation.
-  </p>
-  <h2>✨ Features</h2>
-  <ul>
-    <li><strong>🌗 Light/Dark Mode</strong>: Fully adaptive UI with smooth theme transitions.</li>
-    <li><strong>📦 Bento Grid Design</strong>: Featured sections highlighting projects, skills, and achievements in a clean, 2×3 grid layout.</li>
-    <li><strong>🧠 Dynamic Content</strong>: Real-time data fetching from GitHub and WakaTime APIs.</li>
-    <li><strong>📈 Interactive Charts</strong>: Visualized analytics of my most used technologies and coding activity using Chart.js.</li>
-    <li><strong>🔍 Smart Filtering</strong>: Search and filter badges or certificates on the Achievements page.</li>
-    <li><strong>📬 Contact Form</strong>: Direct-to-email submission powered by Nodemailer with toast notifications via Sonner.</li>
-    <li><strong>🗺️ Google Maps Embed</strong>: Displays my general location within the Contact page.</li>
-    <li><strong>💬 FAQ Section</strong>: Expandable dropdowns for quick answers to common questions.</li>
-    <li><strong>⚡ Fast Performance</strong>: Built with Next.js 15 and Turbopack for optimal load times.</li>
-  </ul>
-  <h2>📁 Pages Overview</h2>
-  <h3>🏠 Home Page</h3>
-  <ul>
-    <li>Displays featured <strong>tech stacks</strong> and my <strong>bento grid layout</strong>.</li>
-    <li>Highlights my main services: <strong>Web</strong>, <strong>Mobile</strong>, <strong>Analytics</strong>, <strong>Design</strong>, <strong>Branding</strong>, and <strong>SEO</strong>.</li>
-    <li>Includes subtle hover animations and blur effects to sequentially highlight each service.</li>
-  </ul>
+#!/usr/bin/env -S bash
 
-  <h3>👤 About Page</h3>
-  <ul>
-    <li>Contains information about my background, personality, and what I do.</li>
-    <li>Features separate <strong>Work</strong> and <strong>Education</strong> sections.</li>
-    <li>Clean, minimalist presentation that adapts to both light and dark themes.</li>
-  </ul>
-  <h3>🏆 Achievements Page</h3>
-  <ul>
-    <li>Displays all <strong>badges</strong> and <strong>certificates</strong> using images hosted on Google Drive.</li>
-    <li>Includes a <strong>search and filter system</strong> allowing users to toggle between "Certificates" and "Badges".</li>
-    <li>Each item includes details like title, issuer, and date earned.</li>
-  </ul>
-  <h3>💻 Projects Page</h3>
-  <ul>
-    <li>Automatically fetches my <strong>top 6 pinned repositories</strong> from the GitHub API.</li>
-    <li>Displays <strong>topics/tags</strong> to show technologies used in each project.</li>
-    <li>Each project links to a <strong>dynamic page</strong> that fetches directly from the project's <strong>README</strong> file.</li>
-    <li>Ensures visitors can view project details and technologies in a seamless and consistent design.</li>
-  </ul>
-  <h3>📊 Dashboard Page</h3>
-  <ul>
-    <li>Combines analytics from <strong>GitHub</strong> and <strong>WakaTime</strong>.</li>
-    <li>Visualizes:
-      <ul>
-        <li>Most used programming languages</li>
-        <li>Editor usage</li>
-        <li>GitHub activity stats</li>
-      </ul>
-    </li>
-    <li>Uses <strong>Chart.js</strong> and <strong>React-Chartjs-2</strong> for rendering beautiful bar and doughnut charts.</li>
-  </ul>
-  <h3>📞 Contact Page</h3>
-  <ul>
-    <li>Includes a <strong>direct email form</strong> powered by <strong>Nodemailer</strong> that sends messages straight to my inbox.</li>
-    <li>Toast notifications via <strong>Sonner</strong> provide real-time feedback on form submission status.</li>
-    <li>Embeds <strong>Google Maps</strong> for my general location display.</li>
-    <li>Contains all <strong>social links</strong> (GitHub, LinkedIn, etc.) with interactive hover effects.</li>
-    <li>Features a <strong>FAQ dropdown</strong> section for quick, organized access to answers.</li>
-  </ul>
-  <h2>🔧 Environment Variables</h2>
-  <p>These are required to fetch real-time data and enable contact form functionality securely:</p>
-  <pre><code># GitHub API
+# Rashid Visda — Developer Portfolio
+
+> A fast, minimal portfolio built with Next.js 15, TypeScript and Tailwind CSS 4.
+
+[![Next.js](https://img.shields.io/badge/next-15.5.4-blue?logo=next.js)](https://nextjs.org/)
+
+---
+
+## What this project does
+
+This repository is a personal developer portfolio (website) that showcases projects, achievements, and analytics. It's implemented with the Next.js 15 App Router, TypeScript, Tailwind CSS, and several UI/analytics integrations (Chart.js, Lucide icons, Keen Slider, WakaTime & GitHub data fetchers).
+
+Key pages:
+
+- Home — featured projects and services (bento grid layout)
+- About — bio, work and education
+- Projects — dynamic project pages populated from GitHub/README files
+- Achievements — certificates and badges with search/filter
+- Dashboard — GitHub + WakaTime visualizations (Chart.js)
+- Contact — email form (Nodemailer) and social links
+
+## Why this is useful
+
+- Lightweight, responsive portfolio starter using modern Next.js features and Turbopack for fast builds
+- Dark/light theme support with Tailwind `dark` class
+- Example integrations for fetching and visualizing external developer data (GitHub, WakaTime)
+- Ready-to-deploy to Vercel or other Node.js hosts
+
+## Quick start (developer)
+
+Requirements
+
+- Node.js 18+ (recommended)
+- npm (or Yarn)
+
+Install and run locally
+
+```bash
+git clone --depth=1 https://github.com/zidvsd/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 to view the app.
+
+Build for production
+
+```bash
+npm run build    # builds using Turbopack
+npm start        # runs the production server
+```
+
+Linting
+
+```bash
+npm run lint
+```
+
+## Environment variables
+
+Create a `.env.local` at the project root with the following values when you need API integrations:
+
+```env
+# GitHub (optional)
 GITHUB_API_KEY=your_github_api_key
 GITHUB_USERNAME=your_github_username
 
-# WakaTime API
-
+# WakaTime (optional)
 WAKATIME_API_KEY=your_wakatime_api_key
 WAKATIME_USERNAME=your_wakatime_username
 
-# Email Configuration (Nodemailer)
-
+# Email (for contact form)
 MAIL_USER=your_email@gmail.com
 MAIL_PASS=your_app_specific_password
 MAIL_TO=recipient_email@gmail.com
-</code></pre>
+```
 
-  <h3>📧 Email Setup Guide</h3>
-  <p>To enable the contact form:</p>
-  <ol>
-    <li>Use a Gmail account or any SMTP-supported email service</li>
-    <li>For Gmail, generate an <strong>App Password</strong> from your Google Account settings</li>
-    <li><code>MAIL_USER</code>: Your sending email address</li>
-    <li><code>MAIL_PASS</code>: Your app-specific password (not your regular password)</li>
-    <li><code>MAIL_TO</code>: The email address where you want to receive contact form submissions</li>
-  </ol>
+Notes:
 
-  <h2>🧠 Tech Stack</h2>
-  <ul>
-    <li><strong>Framework:</strong> Next.js 15 (with Turbopack)</li>
-    <li><strong>Language:</strong> TypeScript</li>
-    <li><strong>Styling:</strong> Tailwind CSS 4</li>
-    <li><strong>Animation:</strong> Motion (Framer Motion compatible)</li>
-    <li><strong>UI Components:</strong> Lucide React Icons</li>
-    <li><strong>Carousel:</strong> Keen Slider</li>
-    <li><strong>Charts:</strong> Chart.js + React-Chartjs-2</li>
-    <li><strong>Date Handling:</strong> Day.js</li>
-    <li><strong>Loading States:</strong> React Loading Skeleton</li>
-    <li><strong>Markdown Parser:</strong> Marked.js (for dynamic project READMEs)</li>
-    <li><strong>Progress Indicator:</strong> Next.js Top Loader</li>
-    <li><strong>Email Service:</strong> Nodemailer</li>
-    <li><strong>Toast Notifications:</strong> Sonner</li>
-  </ul>
+- The app runs without these keys but features that fetch external data will be disabled or empty.
 
-  <h2>🛠️ Installation &amp; Setup</h2>
-  <h3>⚙️ Prerequisites</h3>
-  <ul>
-    <li>Node.js (version 18 or higher)</li>
-    <li>NPM or Yarn</li>
-  </ul>
-  <h3>🚀 Steps to Run Locally</h3>
-  <ol>
-    <li>
-      Clone the repository:
-      <pre><code>git clone https://github.com/yourusername/portfolio.git</code></pre>
-    </li>
-    <li>
-      Navigate to the project directory:
-      <pre><code>cd portfolio</code></pre>
-    </li>
-    <li>
-      Install dependencies:
-      <pre><code>npm install</code></pre>
-    </li>
-    <li>
-      Add your environment variables in a <code>.env.local</code> file:
-      <pre><code>GITHUB_API_KEY=your_github_api_key
-GITHUB_USERNAME=your_github_username
-WAKATIME_API_KEY=your_wakatime_api_key
-WAKATIME_USERNAME=your_wakatime_username
-MAIL_USER=your_email@gmail.com
-MAIL_PASS=your_app_specific_password
-MAIL_TO=recipient_email@gmail.com
-      </code></pre>
-    </li>
-    <li>
-      Start the development server:
-      <pre><code>npm run dev</code></pre>
-      <p>
-        This will open the app at
-        <a href="http://localhost:3000" target="_blank">
-          http://localhost:3000
-        </a>.
-      </p>
-    </li>
-  </ol>
-  <h2>🤝 Contributing</h2>
-  <p>Contributions, suggestions, or feature improvements are always welcome!</p>
-  <h3>How to contribute:</h3>
-  <ol>
-    <li>Fork the repository.</li>
-    <li>Create a new branch for your feature or fix.</li>
-    <li>Make and test your changes locally.</li>
-    <li>Submit a pull request with a clear description.</li>
-  </ol>
-  <h2>📬 Contact</h2>
-  <p>
-    For collaborations or inquiries, reach out via email:
-    <a href="mailto:rashidvisda@gmail.com">rashidvisda@gmail.com</a>
-  </p>
-  <p>
-    You can also connect with me on my social platforms linked on the Contact page.
-  </p>
-  <hr>
-  <p style="text-align: center;">Made with ❤️ by Rashid Visda</p>
-</body>
-</html>
+## Project structure (high level)
+
+- `app/` — Next.js App Router pages and route handlers
+- `components/` — UI components and layout pieces (`layout/`, `section/`, `ui/`)
+- `data/` — JSON content used by the app (`navs.json`, `profile.json`, etc.)
+- `lib/` — small helper modules (GitHub/WakaTime fetchers, utils)
+- `public/` — static assets (images, icons)
+- `types/` — TypeScript types
+
+See the `app/`, `components/`, and `lib/` folders for implementation details.
+
+## Deployment
+
+- The project is compatible with Vercel (recommended). Push to your GitHub repo and import the project to Vercel for automatic deployments.
+- Ensure environment variables are configured in your Vercel project settings.
+
+## Contributing & support
+
+- Bug reports and feature requests: open an issue in this repository.
+- Want to contribute? Please open a pull request. For larger contributions, create an issue first to discuss the change.
+- See `CONTRIBUTING.md` (if present) for contribution guidelines.
+
+## Maintainers
+
+- Primary: `zidvsd` (GitHub profile)
+
+For direct contact see the `app/contact` page or the site contact information.
+
+## License
+
+This project references a license file — see `LICENSE` in the repository root for full terms.
+
+---
+
+If you'd like, I can also:
+
+- add a `CONTRIBUTING.md` template in the repo
+- add CI badges (GitHub Actions / Vercel) with working links
+- generate a short `docs/` folder with architecture notes
