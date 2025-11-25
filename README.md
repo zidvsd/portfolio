@@ -1,5 +1,3 @@
-#!/usr/bin/env -S bash
-
 # Rashid Visda — Developer Portfolio
 
 > A fast, minimal portfolio built with Next.js 15, TypeScript and Tailwind CSS 4.
