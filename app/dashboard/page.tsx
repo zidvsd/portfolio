@@ -1,4 +1,4 @@
-import { BarChart3, Code2, GitCommitHorizontal, Clock } from "lucide-react";
+export const dynamic = "force-dynamic";
 import GithubStats from "@/components/section/dashboard/GithubStats";
 import WakaTimeChart from "@/components/section/dashboard/WakaTimeChart";
 import { getWakaTimeData } from "@/lib/wakatime";
