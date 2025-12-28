@@ -12,8 +12,6 @@
   { "src": "/icons/mongodb.svg", "alt": "MongoDB" },
   { "src": "/icons/postgresql.svg", "alt": "PostgreSQL" },
   { "src": "/icons/supabase.svg", "alt": "Supabase" },
-  { "src": "/icons/vite.svg", "alt": "Vite" },
   { "src": "/icons/git.svg", "alt": "Git" },
-  { "src": "/icons/npm.svg", "alt": "Npm" },
   { "src": "/icons/figma.svg", "alt": "Figma" }
 ]
