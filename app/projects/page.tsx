@@ -3,13 +3,14 @@ import { getRepoData } from "@/lib/github";
 import ProjectsGrid from "@/components/section/projects/ProjectsGrid";
 
 export const repoNames = [
+  "gadyet-hub",
+  "stash",
   "portfolio",
   "kita-jobs-app",
   "clothora",
   "recipe-app",
   "brew-haven",
   "le-dream",
-  "stash"
 ];
 
 export default async function Page() {

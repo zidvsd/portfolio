@@ -32,5 +32,10 @@
     "name": "stash",
     "image": "/images/projects/stash.png",
     "live-demo": "https://stash-lemon.vercel.app/"
+  },
+  {
+    "name": "gadyet-hub",
+    "image": "/images/projects/gadyet-hub.png",
+    "live-demo": "https://gadyet-hub.vercel.app/"
   }
 ]
